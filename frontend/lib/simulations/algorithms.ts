@@ -119,11 +119,47 @@ export class SortingSimulator {
         }
     }
 
+    *heapSort(arr: number[]): Generator<SortStep> {
+        const n = arr.length;
+
+        // Build max heap
+        for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+            yield* this.heapify(arr, n, i);
+        }
+
+        // Heap sort
+        for (let i = n - 1; i > 0; i--) {
+            // Move current root to end
+            [arr[0], arr[i]] = [arr[i], arr[0]];
+            yield { data: [...arr], indices: [0, i], swapped: [0, i], done: false };
+
+            // Call max heapify on the reduced heap
+            yield* this.heapify(arr, i, 0);
+        }
+        yield { data: [...arr], indices: [], swapped: [], done: true };
+    }
+
+    *heapify(arr: number[], n: number, i: number): Generator<SortStep> {
+        let largest = i;
+        const l = 2 * i + 1;
+        const r = 2 * i + 2;
+
+        if (l < n && arr[l] > arr[largest]) largest = l;
+        if (r < n && arr[r] > arr[largest]) largest = r;
+
+        if (largest !== i) {
+            [arr[i], arr[largest]] = [arr[largest], arr[i]];
+            yield { data: [...arr], indices: [i, largest], swapped: [i, largest], done: false };
+            yield* this.heapify(arr, n, largest);
+        }
+    }
+
     start(type: string) {
         const arr = [...this.data];
         if (type === 'bubble') this.generator = this.bubbleSort(arr);
         else if (type === 'quick') this.generator = this.quickSort(arr, 0, arr.length - 1);
         else if (type === 'merge') this.generator = this.mergeSort(arr, 0, arr.length - 1);
+        else if (type === 'heap') this.generator = this.heapSort(arr);
     }
 
     step(): SortStep | null {

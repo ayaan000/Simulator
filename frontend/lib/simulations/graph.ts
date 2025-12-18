@@ -1,9 +1,8 @@
-
 export type Node = {
     id: number;
     x: number;
     y: number;
-    neighbors: number[];
+    neighbors: { id: number; weight: number }[];
 };
 
 export type GraphStep = {
@@ -16,6 +15,8 @@ export type GraphStep = {
 export class GraphSimulator {
     nodes: Node[];
     generator: Generator<GraphStep, void, unknown> | null = null;
+    startId: number = 0;
+    endId: number = 0;
 
     constructor(numNodes: number = 20) {
         this.nodes = [];
@@ -38,11 +39,14 @@ export class GraphSimulator {
             for (let j = i + 1; j < n; j++) {
                 const dist = Math.hypot(this.nodes[i].x - this.nodes[j].x, this.nodes[i].y - this.nodes[j].y);
                 if (dist < 30) {
-                    this.nodes[i].neighbors.push(j);
-                    this.nodes[j].neighbors.push(i);
+                    // Default weight 1 as requested, or dist? User said "default of 1".
+                    this.nodes[i].neighbors.push({ id: j, weight: 1 });
+                    this.nodes[j].neighbors.push({ id: i, weight: 1 });
                 }
             }
         }
+        this.startId = 0;
+        this.endId = n - 1;
     }
 
     addNode() {
@@ -59,16 +63,26 @@ export class GraphSimulator {
         const n1 = this.nodes[id1];
         const n2 = this.nodes[id2];
 
-        const idx1 = n1.neighbors.indexOf(id2);
+        const idx1 = n1.neighbors.findIndex(n => n.id === id2);
         if (idx1 !== -1) {
             // Remove
             n1.neighbors.splice(idx1, 1);
-            n2.neighbors.splice(n2.neighbors.indexOf(id1), 1);
+            const idx2 = n2.neighbors.findIndex(n => n.id === id1);
+            if (idx2 !== -1) n2.neighbors.splice(idx2, 1);
         } else {
             // Add
-            n1.neighbors.push(id2);
-            n2.neighbors.push(id1);
+            n1.neighbors.push({ id: id2, weight: 1 });
+            n2.neighbors.push({ id: id1, weight: 1 });
         }
+    }
+
+    setEdgeWeight(id1: number, id2: number, weight: number) {
+        const n1 = this.nodes[id1];
+        const n2 = this.nodes[id2];
+        const e1 = n1.neighbors.find(n => n.id === id2);
+        if (e1) e1.weight = weight;
+        const e2 = n2.neighbors.find(n => n.id === id1);
+        if (e2) e2.weight = weight;
     }
 
     *bfs(startId: number, endId: number): Generator<GraphStep> {
@@ -82,7 +96,6 @@ export class GraphSimulator {
             yield { visited: Array.from(visited), path: [], current: curr, done: false };
 
             if (curr === endId) {
-                // Reconstruct path
                 const path = [endId];
                 let p = endId;
                 while (parent.has(p)) {
@@ -94,10 +107,10 @@ export class GraphSimulator {
             }
 
             for (const neighbor of this.nodes[curr].neighbors) {
-                if (!visited.has(neighbor)) {
-                    visited.add(neighbor);
-                    parent.set(neighbor, curr);
-                    queue.push(neighbor);
+                if (!visited.has(neighbor.id)) {
+                    visited.add(neighbor.id);
+                    parent.set(neighbor.id, curr);
+                    queue.push(neighbor.id);
                 }
             }
         }
@@ -127,9 +140,9 @@ export class GraphSimulator {
                 }
 
                 for (const neighbor of this.nodes[curr].neighbors) {
-                    if (!visited.has(neighbor)) {
-                        parent.set(neighbor, curr);
-                        stack.push(neighbor);
+                    if (!visited.has(neighbor.id)) {
+                        parent.set(neighbor.id, curr);
+                        stack.push(neighbor.id);
                     }
                 }
             }
@@ -140,18 +153,16 @@ export class GraphSimulator {
     *dijkstra(startId: number, endId: number): Generator<GraphStep> {
         const dist = new Map<number, number>();
         const prev = new Map<number, number>();
-        const pq = new Set<number>(); // Simple set as PQ for demo
+        const pq = new Set<number>();
 
         for (const node of this.nodes) {
             dist.set(node.id, Infinity);
             pq.add(node.id);
         }
         dist.set(startId, 0);
-
         const visited = new Set<number>();
 
         while (pq.size > 0) {
-            // Find min dist node
             let u = -1;
             let minD = Infinity;
             for (const id of pq) {
@@ -178,12 +189,12 @@ export class GraphSimulator {
                 return;
             }
 
-            for (const v of this.nodes[u].neighbors) {
-                if (pq.has(v)) {
-                    const alt = dist.get(u)! + 1; // Uniform weight
-                    if (alt < dist.get(v)!) {
-                        dist.set(v, alt);
-                        prev.set(v, u);
+            for (const neighbor of this.nodes[u].neighbors) {
+                if (pq.has(neighbor.id)) {
+                    const alt = dist.get(u)! + neighbor.weight; // Use actual weight
+                    if (alt < dist.get(neighbor.id)!) {
+                        dist.set(neighbor.id, alt);
+                        prev.set(neighbor.id, u);
                     }
                 }
             }
@@ -197,7 +208,7 @@ export class GraphSimulator {
 
         const h = (id: number) => {
             const n = this.nodes[id];
-            return Math.hypot(n.x - endNode.x, n.y - endNode.y);
+            return Math.hypot(n.x - endNode.x, n.y - endNode.y) * 1; // Heuristic scale?
         };
 
         const openSet = new Set<number>([startId]);
@@ -212,7 +223,6 @@ export class GraphSimulator {
         const visited = new Set<number>();
 
         while (openSet.size > 0) {
-            // Node with lowest fScore
             let current = -1;
             let minF = Infinity;
             for (const id of openSet) {
@@ -239,17 +249,14 @@ export class GraphSimulator {
             yield { visited: Array.from(visited), path: [], current, done: false };
 
             for (const neighbor of this.nodes[current].neighbors) {
-                const tentative_g = gScore.get(current)! + Math.hypot(
-                    this.nodes[current].x - this.nodes[neighbor].x,
-                    this.nodes[current].y - this.nodes[neighbor].y
-                );
+                const tentative_g = gScore.get(current)! + neighbor.weight; // Use edge weight for cost
 
-                if (tentative_g < (gScore.get(neighbor) ?? Infinity)) {
-                    cameFrom.set(neighbor, current);
-                    gScore.set(neighbor, tentative_g);
-                    fScore.set(neighbor, tentative_g + h(neighbor));
-                    if (!visited.has(neighbor)) {
-                        openSet.add(neighbor);
+                if (tentative_g < (gScore.get(neighbor.id) ?? Infinity)) {
+                    cameFrom.set(neighbor.id, current);
+                    gScore.set(neighbor.id, tentative_g);
+                    fScore.set(neighbor.id, tentative_g + h(neighbor.id));
+                    if (!visited.has(neighbor.id)) {
+                        openSet.add(neighbor.id);
                     }
                 }
             }
@@ -257,11 +264,14 @@ export class GraphSimulator {
         yield { visited: Array.from(visited), path: [], current: null, done: true };
     }
 
-    start(type: string) {
-        if (type === 'bfs') this.generator = this.bfs(0, this.nodes.length - 1);
-        else if (type === 'dfs') this.generator = this.dfs(0, this.nodes.length - 1);
-        else if (type === 'dijkstra') this.generator = this.dijkstra(0, this.nodes.length - 1);
-        else if (type === 'astar') this.generator = this.astar(0, this.nodes.length - 1);
+    start(type: string, startId?: number, endId?: number) {
+        if (startId !== undefined) this.startId = startId;
+        if (endId !== undefined) this.endId = endId;
+
+        if (type === 'bfs') this.generator = this.bfs(this.startId, this.endId);
+        else if (type === 'dfs') this.generator = this.dfs(this.startId, this.endId);
+        else if (type === 'dijkstra') this.generator = this.dijkstra(this.startId, this.endId);
+        else if (type === 'astar') this.generator = this.astar(this.startId, this.endId);
     }
 
     step(): GraphStep | null {

@@ -40,7 +40,7 @@ export class UniverseSimulator {
         for (let i = 0; i < n; i++) {
             const dist = 20 + Math.random() * 80;
             const angle = Math.random() * Math.PI * 2;
-            const velocity = Math.sqrt(10000 / dist); // Circular orbit v = sqrt(GM/r)
+            const velocity = Math.sqrt((this.G * 10000) / dist); // Circular orbit v = sqrt(GM/r)
 
             this.bodies.push({
                 x: Math.cos(angle) * dist,
@@ -63,15 +63,15 @@ export class UniverseSimulator {
         this.bodies.push({ x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, mass: 30000, radius: 6, color: '#FFD700', trail: [] });
 
         // Mercury
-        this.bodies.push({ x: 10, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 10), vz: 0, mass: 1, radius: 0.8, color: '#A5A5A5', trail: [] });
+        this.bodies.push({ x: 10, y: 0, z: 0, vx: 0, vy: Math.sqrt((this.G * 30000) / 10), vz: 0, mass: 1, radius: 0.8, color: '#A5A5A5', trail: [] });
         // Venus
-        this.bodies.push({ x: 15, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 15), vz: 0, mass: 2, radius: 1.2, color: '#E3BB76', trail: [] });
+        this.bodies.push({ x: 15, y: 0, z: 0, vx: 0, vy: Math.sqrt((this.G * 30000) / 15), vz: 0, mass: 2, radius: 1.2, color: '#E3BB76', trail: [] });
         // Earth
-        this.bodies.push({ x: 20, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 20), vz: 0, mass: 2, radius: 1.3, color: '#22A6B3', trail: [] });
+        this.bodies.push({ x: 20, y: 0, z: 0, vx: 0, vy: Math.sqrt((this.G * 30000) / 20), vz: 0, mass: 2, radius: 1.3, color: '#22A6B3', trail: [] });
         // Mars
-        this.bodies.push({ x: 25, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 25), vz: 0, mass: 1.5, radius: 1.0, color: '#EB4D4B', trail: [] });
+        this.bodies.push({ x: 25, y: 0, z: 0, vx: 0, vy: Math.sqrt((this.G * 30000) / 25), vz: 0, mass: 1.5, radius: 1.0, color: '#EB4D4B', trail: [] });
         // Jupiter
-        this.bodies.push({ x: 40, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 40), vz: 0, mass: 50, radius: 3.5, color: '#F0932B', trail: [] });
+        this.bodies.push({ x: 40, y: 0, z: 0, vx: 0, vy: Math.sqrt((this.G * 30000) / 40), vz: 0, mass: 50, radius: 3.5, color: '#F0932B', trail: [] });
     }
 
     blackHole() {
@@ -90,7 +90,7 @@ export class UniverseSimulator {
         for (let i = 0; i < 300; i++) {
             const dist = 15 + Math.random() * 60;
             const angle = Math.random() * Math.PI * 2;
-            const velocity = Math.sqrt(500000 / dist);
+            const velocity = Math.sqrt((this.G * 500000) / dist);
             // Add some randomness to velocity/plane
             const variation = 0.8 + Math.random() * 0.4;
 
@@ -120,13 +120,18 @@ export class UniverseSimulator {
                 const dy = this.bodies[j].y - this.bodies[i].y;
                 const dz = this.bodies[j].z - this.bodies[i].z;
                 const distSq = dx * dx + dy * dy + dz * dz;
-                const dist = Math.sqrt(distSq);
-                if (dist < 1) continue; // Softening
+                // Softened gravity to prevent singularities and instability
+                // F = G * m1 * m2 / (r^2 + softening^2)
+                // Vector form: F_vec = F * (r_vec / r) = (G * m1 * m2 * r_vec) / (r^2 + softening^2)^(3/2)
 
-                const f = (this.G * this.bodies[i].mass * this.bodies[j].mass) / distSq;
-                fx += f * dx / dist;
-                fy += f * dy / dist;
-                fz += f * dz / dist;
+                const softening = 2.0; // Softening parameter
+                const distSoft = Math.pow(distSq + softening * softening, 1.5);
+
+                const f = (this.G * this.bodies[i].mass * this.bodies[j].mass) / distSoft;
+
+                fx += f * dx;
+                fy += f * dy;
+                fz += f * dz;
             }
             this.bodies[i].vx += (fx / this.bodies[i].mass) * this.dt;
             this.bodies[i].vy += (fy / this.bodies[i].mass) * this.dt;

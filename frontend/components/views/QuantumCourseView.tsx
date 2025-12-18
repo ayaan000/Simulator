@@ -20,16 +20,16 @@ const CHAPTERS = [
                 <div className="my-6 p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded">
                     <h4 className="mt-0 text-blue-300">Key Concept: Quantum State Vectors</h4>
                     <p>
-                        We represent the state of the atoms deflected "up" as the ket <code>|+&rangle;</code> (spin up).
-                        The atoms deflected "down" are <code>|-&rangle;</code> (spin down).
+                        We represent the state of the atoms deflected "up" as the ket <code>|+⟩</code> (spin up).
+                        The atoms deflected "down" are <code>|-⟩</code> (spin down).
                         <br />
-                        A general state is a superposition: <code>|&psi;&rangle; = c<sub>+</sub>|+&rangle; + c<sub>-</sub>|-&rangle;</code>
+                        A general state is a superposition: <code>|ψ⟩ = c<sub>+</sub>|+⟩ + c<sub>-</sub>|-⟩</code>
                     </p>
                 </div>
 
                 <h3>1.2 Sequential Measurements</h3>
                 <p>
-                    What happens if we block the <code>|-&rangle;</code> beam and send the <code>|+&rangle;</code> atoms through a second magnet?
+                    What happens if we block the <code>|-⟩</code> beam and send the <code>|+⟩</code> atoms through a second magnet?
                 </p>
                 <ul className="list-disc pl-5">
                     <li>If the second magnet is also <strong>Z-oriented</strong>, 100% of atoms go UP. The state "remembers" it is spin up.</li>
@@ -39,10 +39,10 @@ const CHAPTERS = [
         ),
         sim: <SternGerlachSim />,
         quiz: {
-            question: "An atom is prepared in the state |+&rangle; (Spin Z Up). It passes through an X-analyzer. What is the probability of measuring Spin X Down?",
+            question: "An atom is prepared in the state |+⟩ (Spin Z Up). It passes through an X-analyzer. What is the probability of measuring Spin X Down?",
             options: ['0%', '25%', '50%', '100%'],
             answer: '50%',
-            explanation: "Correct! The state |+&rangle; is an equal superposition of X-up and X-down: |+&rangle; = (|+&rangle;ₓ + |-&rangle;ₓ) / &radic;2"
+            explanation: "Correct! The state |+⟩ is an equal superposition of X-up and X-down: |+⟩ = (|+⟩ₓ + |-⟩ₓ) / √2"
         }
     },
     {
@@ -58,7 +58,7 @@ const CHAPTERS = [
                 <p>
                     When an operator acts on a state vector (ket), it transforms it into a new vector:
                     <br />
-                    <code>A|&psi;&rangle; = |&phi;&rangle;</code>
+                    <code>A|ψ⟩ = |ϕ⟩</code>
                 </p>
 
                 <div className="my-6 p-4 bg-purple-900/20 border-l-4 border-purple-500 rounded">
@@ -74,7 +74,7 @@ const CHAPTERS = [
                 <h3>2.2 Measurement</h3>
                 <p>
                     The only possible results of a measurement are the <strong>eigenvalues</strong> of the operator.
-                    For spin operators, the eigenvalues are +&hbar;/2 and -&hbar;/2.
+                    For spin operators, the eigenvalues are +ℏ/2 and -ℏ/2.
                 </p>
                 <p>
                     <strong>Eigenvectors</strong> are special states that don't change direction when the operator acts on them, only their length (by the eigenvalue factor).
@@ -83,10 +83,10 @@ const CHAPTERS = [
         ),
         sim: <MatrixOperatorSim />,
         quiz: {
-            question: "Apply the X operator (Bit Flip) to the state |0&rangle; (Spin Up). What is the result?",
-            options: ['|0&rangle;', '|1&rangle;', '-|0&rangle;', '0'],
-            answer: '|1&rangle;',
-            explanation: "Correct! X|0&rangle; = |1&rangle;. The X operator flips the bit from 0 (up) to 1 (down)."
+            question: "Apply the X operator (Bit Flip) to the state |0⟩ (Spin Up). What is the result?",
+            options: ['|0⟩', '|1⟩', '-|0⟩', '0'],
+            answer: '|1⟩',
+            explanation: "Correct! X|0⟩ = |1⟩. The X operator flips the bit from 0 (up) to 1 (down)."
         }
     },
     {
@@ -98,7 +98,7 @@ const CHAPTERS = [
                 <p>
                     How do quantum states change over time? They evolve according to the Schrödinger equation:
                     <br />
-                    <code>i&hbar; d/dt |&psi;(t)&rangle; = H |&psi;(t)&rangle;</code>
+                    <code>iℏ d/dt |ψ(t)⟩ = H |ψ(t)⟩</code>
                 </p>
                 <p>
                     Here, <strong>H</strong> is the Hamiltonian operator, representing the total energy of the system.
@@ -106,7 +106,7 @@ const CHAPTERS = [
 
                 <h3>3.2 Spin Precession</h3>
                 <p>
-                    For a spin-1/2 particle in a magnetic field <strong>B</strong>, the Hamiltonian is <code>H = -&gamma; B&middot;S</code>.
+                    For a spin-1/2 particle in a magnetic field <strong>B</strong>, the Hamiltonian is <code>H = -γ B·S</code>.
                     This causes the spin vector to <strong>precess</strong> around the magnetic field direction, similar to a gyroscope.
                 </p>
                 <p>
@@ -116,10 +116,10 @@ const CHAPTERS = [
         ),
         sim: <SpinPrecessionSim />,
         quiz: {
-            question: "If a spin starts in |+x&rangle; and a B-field is applied along Z, what happens?",
-            options: ['It stays in |+x&rangle;', 'It flips to |-x&rangle;', 'It precesses in the XY plane', 'It aligns with Z'],
+            question: "If a spin starts in |+x⟩ and a B-field is applied along Z, what happens?",
+            options: ['It stays in |+x⟩', 'It flips to |-x⟩', 'It precesses in the XY plane', 'It aligns with Z'],
             answer: 'It precesses in the XY plane',
-            explanation: "Correct! The torque is &tau; = &mu; &times; B. Since &mu; is along X and B is along Z, the torque is along Y, causing precession."
+            explanation: "Correct! The torque is τ = μ × B. Since μ is along X and B is along Z, the torque is along Y, causing precession."
         }
     },
     {
@@ -133,7 +133,7 @@ const CHAPTERS = [
                     The state of the whole system cannot be described as a product of individual states.
                 </p>
                 <p>
-                    Example (Bell State): <code>|&Phi;<sup>+</sup>&rangle; = (|00&rangle; + |11&rangle;) / &radic;2</code>
+                    Example (Bell State): <code>|Φ<sup>+</sup>⟩ = (|00⟩ + |11⟩) / √2</code>
                 </p>
                 <p>
                     If you measure the first qubit and get 0, the second qubit <strong>instantly</strong> becomes 0, no matter how far away it is.
@@ -143,7 +143,7 @@ const CHAPTERS = [
         ),
         sim: <EntanglementSim />,
         quiz: {
-            question: "In the state (|00&rangle; + |11&rangle;)/&radic;2, if Alice measures 0, what will Bob measure?",
+            question: "In the state (|00⟩ + |11⟩)/√2, if Alice measures 0, what will Bob measure?",
             options: ['0 (100%)', '1 (100%)', '0 or 1 (50/50)', 'Nothing'],
             answer: '0 (100%)',
             explanation: "Correct! The measurements are perfectly correlated."
@@ -161,10 +161,10 @@ const CHAPTERS = [
                 <p>
                     The wavefunction must be zero at the walls. This boundary condition forces the wavefunction to be a standing wave:
                     <br />
-                    <code>&psi;<sub>n</sub>(x) = &radic;(2/L) sin(n&pi;x/L)</code>
+                    <code>ψ<sub>n</sub>(x) = √(2/L) sin(nπx/L)</code>
                 </p>
                 <p>
-                    The energy levels are quantized: <code>E<sub>n</sub> = n&sup2;h&sup2; / (8mL&sup2;)</code>.
+                    The energy levels are quantized: <code>E<sub>n</sub> = n²h² / (8mL²)</code>.
                     Zero energy is impossible! (Zero-point energy).
                 </p>
             </>
@@ -174,7 +174,7 @@ const CHAPTERS = [
             question: "What happens to the energy levels if you shrink the box size L?",
             options: ['They get closer', 'They spread apart', 'They stay the same', 'They become zero'],
             answer: 'They spread apart',
-            explanation: "Correct! E is proportional to 1/L&sup2;. Smaller box = Higher confinement energy."
+            explanation: "Correct! E is proportional to 1/L². Smaller box = Higher confinement energy."
         }
     },
     {
@@ -200,7 +200,7 @@ const CHAPTERS = [
             question: "Does tunneling probability increase or decrease with barrier width?",
             options: ['Increase', 'Decrease', 'Stays same', 'Oscillates'],
             answer: 'Decrease',
-            explanation: "Correct! The wavefunction decays exponentially e<sup>(-&kappa;x)</sup> inside the barrier. Wider barrier = less transmission."
+            explanation: "Correct! The wavefunction decays exponentially e<sup>(-κx)</sup> inside the barrier. Wider barrier = less transmission."
         }
     }
 ];
@@ -402,8 +402,8 @@ function SternGerlachSim() {
                         className="bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm"
                     >
                         <option value="Random">Unpolarized (Random)</option>
-                        <option value="+Z">Spin Up |+&rangle;</option>
-                        <option value="-Z">Spin Down |-&rangle;</option>
+                        <option value="+Z">Spin Up |+⟩</option>
+                        <option value="-Z">Spin Down |-⟩</option>
                     </select>
                 </div>
                 <div className="flex flex-col">
@@ -446,9 +446,9 @@ function MatrixOperatorSim() {
     return (
         <div className="flex flex-col h-full items-center justify-center p-8">
             <div className="text-center mb-8">
-                <h3 className="text-2xl font-mono text-purple-400 mb-4">State Vector |&psi;&rangle;</h3>
+                <h3 className="text-2xl font-mono text-purple-400 mb-4">State Vector |ψ⟩</h3>
                 <div className="text-4xl font-mono bg-gray-900 p-6 rounded-xl border border-gray-700">
-                    {state.c0.toFixed(3)}|0&rangle; + {state.c1.toFixed(3)}|1&rangle;
+                    {state.c0.toFixed(3)}|0⟩ + {state.c1.toFixed(3)}|1⟩
                 </div>
             </div>
             <div className="flex gap-4">
@@ -456,7 +456,7 @@ function MatrixOperatorSim() {
                 <button onClick={() => applyOperator('Z')} className="px-6 py-3 bg-green-600 rounded hover:bg-green-500 font-bold font-mono text-xl">Z</button>
                 <button onClick={() => applyOperator('H')} className="px-6 py-3 bg-yellow-600 rounded hover:bg-yellow-500 font-bold font-mono text-xl">H</button>
             </div>
-            <button onClick={reset} className="mt-8 text-gray-500 hover:text-white underline">Reset to |0&rangle;</button>
+            <button onClick={reset} className="mt-8 text-gray-500 hover:text-white underline">Reset to |0⟩</button>
         </div>
     );
 }
@@ -544,9 +544,9 @@ function EntanglementSim() {
     return (
         <div className="flex flex-col h-full items-center justify-center p-8">
             <div className="mb-8 text-center">
-                <h3 className="text-xl text-purple-400 mb-2">Bell State |&Phi;<sup>+</sup>&rangle;</h3>
+                <h3 className="text-xl text-purple-400 mb-2">Bell State |Φ<sup>+</sup>⟩</h3>
                 <div className="text-4xl font-mono">
-                    (|00&rangle; + |11&rangle;) / &radic;2
+                    (|00⟩ + |11⟩) / √2
                 </div>
             </div>
 
@@ -622,7 +622,7 @@ function ParticleInBoxSim() {
             // Draw Energy Level
             ctx.fillStyle = '#ffff00';
             ctx.fillText(`n = ${n}`, 20, 200);
-            ctx.fillText(`E &propto; ${n * n}`, 20, 220);
+            ctx.fillText(`E ∝ ${n * n}`, 20, 220);
 
         }, 16);
         return () => clearInterval(interval);

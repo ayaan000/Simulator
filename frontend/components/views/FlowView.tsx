@@ -77,24 +77,58 @@ export default function FlowView() {
 
     return (
         <div className="flex flex-col h-full">
-            <div className="flex gap-4 mb-4 items-center bg-gray-800 p-4 rounded-xl border border-gray-700">
-                <h2 className="text-xl font-bold text-blue-400">Network Flow (Max Flow)</h2>
-                <button
-                    onClick={handleStart}
-                    className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded font-bold text-white"
-                    disabled={running}
-                >
-                    {running ? 'Calculating...' : 'Run Max Flow'}
-                </button>
-                <div className="text-sm text-gray-400">
-                    Source: S (0), Sink: T ({sim.nodes.length - 1})
+            <div className="flex gap-4 mb-4 items-center bg-gray-800 p-4 rounded-xl border border-gray-700 overflow-x-auto">
+                <h2 className="text-xl font-bold text-blue-400 whitespace-nowrap">Max Flow</h2>
+
+                <div className="flex bg-gray-700 rounded p-1 gap-1">
+                    <button
+                        onClick={() => setMode('view')}
+                        className={`px-3 py-1 rounded text-sm ${mode === 'view' ? 'bg-blue-600 text-white' : 'hover:bg-gray-600 text-gray-300'}`}
+                    >
+                        View
+                    </button>
+                    <button
+                        onClick={() => setMode('add_node')}
+                        className={`px-3 py-1 rounded text-sm ${mode === 'add_node' ? 'bg-blue-600 text-white' : 'hover:bg-gray-600 text-gray-300'}`}
+                    >
+                        + Node
+                    </button>
+                    <button
+                        onClick={() => setMode('add_edge')}
+                        className={`px-3 py-1 rounded text-sm ${mode === 'add_edge' ? 'bg-blue-600 text-white' : 'hover:bg-gray-600 text-gray-300'}`}
+                    >
+                        + Edge
+                    </button>
+                    <button
+                        onClick={() => setMode('edit_cap')}
+                        className={`px-3 py-1 rounded text-sm ${mode === 'edit_cap' ? 'bg-blue-600 text-white' : 'hover:bg-gray-600 text-gray-300'}`}
+                    >
+                        Edit Cap
+                    </button>
+                </div>
+
+                <div className="flex gap-2 ml-auto">
+                    <button
+                        onClick={() => { sim.edges.forEach(e => e.flow = 0); setLog([]); setResidualEdges([]); setHighlightEdges([]); setRunning(false); }}
+                        className="px-4 py-2 bg-yellow-700 hover:bg-yellow-600 rounded font-bold text-white text-sm whitespace-nowrap"
+                    >
+                        Reset Flow
+                    </button>
+                    <button
+                        onClick={handleStart}
+                        className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded font-bold text-white text-sm whitespace-nowrap"
+                        disabled={running}
+                    >
+                        {running ? 'Calculating...' : 'Run'}
+                    </button>
                 </div>
             </div>
 
             <div className="flex flex-1 gap-4 overflow-hidden">
                 <div
-                    className="flex-1 bg-black rounded-xl border border-gray-700 relative overflow-hidden"
+                    className={`flex-1 bg-black rounded-xl border border-gray-700 relative overflow-hidden ${mode === 'add_node' ? 'cursor-crosshair' : 'cursor-default'}`}
                     onMouseMove={handleMouseMove}
+                    onClick={handleCanvasClick}
                     onMouseUp={() => setDragNode(null)}
                     onMouseLeave={() => setDragNode(null)}
                 >

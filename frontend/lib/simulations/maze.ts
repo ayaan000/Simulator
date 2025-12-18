@@ -37,6 +37,24 @@ export class MazeSimulator {
         this.current = this.grid[this.index(startX, startY)];
         if (!this.current) this.current = this.grid[0]; // Fallback
 
+        // OPEN ENTRANCE AND EXIT
+        // If Start is on boundary, remove outer wall
+        if (this.current.x === 0) this.current.walls[3] = false; // Left
+        else if (this.current.y === 0) this.current.walls[0] = false; // Top
+
+        const endIdx = this.index(this.cols - 1, this.rows - 1); // Default end
+        // We only know the requested start, but MazeView manages 'endPos'. 
+        // Logic: The MazeSimulator just generates a spanning tree. 
+        // We need to enforce openness on the "End" cell if it is known, but here we only have start.
+        // Let's assume standard Entry at Start and Exit at bottom-right (default End).
+
+        // Actually, let's open the wall for the "End" cell if passed or default
+        // The user can pick any end, but for the generator, we just ensure the maze is fully connected.
+        // We just need to ensure the visual "Exit" has an opening.
+        // Let's add an explicit 'setExit' or just open bottom-right for now as default.
+        const endCell = this.grid[this.grid.length - 1]; // Bottom-Right
+        endCell.walls[1] = false; // Open Right wall of bottom-right cell as default exit
+
         this.current.visited = true;
         this.stack = [];
         this.generator = this.generate();

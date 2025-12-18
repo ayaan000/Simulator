@@ -52,11 +52,6 @@ export default function AlgorithmsView() {
                 setData(step.data);
                 setIndices(step.indices);
                 setSwapped(step.swapped);
-                if (audioEnabled) {
-                    // Play tone for accessed elements
-                    step.indices.forEach(idx => playTone(200 + (step.data[idx] || 0) * 5));
-                    step.swapped.forEach(idx => playTone(500 + (step.data[idx] || 0) * 5));
-                }
                 if (step.done) setRunning(false);
             } else {
                 setRunning(false);
@@ -82,6 +77,7 @@ export default function AlgorithmsView() {
                     <option value="bubble">Bubble Sort</option>
                     <option value="quick">Quick Sort</option>
                     <option value="merge">Merge Sort</option>
+                    <option value="heap">Heap Sort</option>
                 </select>
                 <button
                     onClick={handleStart}
@@ -112,14 +108,6 @@ export default function AlgorithmsView() {
                         className="w-32 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
                     />
                 </div>
-                <div className="flex items-center gap-2">
-                    <button
-                        onClick={() => setAudioEnabled(!audioEnabled)}
-                        className={`px-3 py-1 rounded text-xs font-bold ${audioEnabled ? 'bg-indigo-600' : 'bg-gray-700 text-gray-400'}`}
-                    >
-                        {audioEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF'}
-                    </button>
-                </div>
             </div>
 
             <div className="flex-1 bg-black rounded-xl border border-gray-700 p-8 flex items-end justify-center gap-1 relative overflow-hidden">
@@ -131,10 +119,10 @@ export default function AlgorithmsView() {
                     return (
                         <div
                             key={idx}
-                            className={`flex-1 transition-all duration-75 ${color} rounded-t-sm flex items-end justify-center group`}
+                            className={`flex-1 transition-all duration-75 ${color} rounded-t-sm flex items-end justify-center group relative`}
                             style={{ height: `${val}%` }}
                         >
-                            <span className="text-[10px] text-white opacity-0 group-hover:opacity-100 mb-1 font-mono">
+                            <span className="text-[10px] text-white opacity-100 mb-1 font-mono absolute bottom-0">
                                 {val}
                             </span>
                         </div>

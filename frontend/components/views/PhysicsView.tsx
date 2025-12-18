@@ -32,6 +32,32 @@ export default function PhysicsView() {
         const imgData = ctx.createImageData(width, height);
         const data = imgData.data;
 
+        // Clear canvas
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, width, height);
+
+        if (sim.mode === 'rigid') {
+            // Draw Rigid Bodies
+            // Bodies are in 0-100 coord space, Canvas is 400x400. Scale = 4
+            const scale = 4;
+
+            // Draw bounds
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, 0, width, height);
+
+            sim.bodies.forEach(b => {
+                ctx.beginPath();
+                ctx.arc(b.x * scale, b.y * scale, b.radius * scale, 0, Math.PI * 2);
+                ctx.fillStyle = b.color;
+                ctx.fill();
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            });
+            return;
+        }
+
         // Map 100x100 grid to 400x400 canvas (4x scaling)
         const scale = 4;
 
@@ -41,15 +67,33 @@ export default function PhysicsView() {
                 // Color map: Blue (-1) -> Black (0) -> Red (1)
                 const r = Math.max(0, Math.min(255, val * 255));
                 const b = Math.max(0, Math.min(255, -val * 255));
+                // Heat uses red-yellow, Wave uses blue-red
+                // Keeping original blue-red for consistency
 
-                // Fill block
+                if (r === 0 && b === 0) continue; // Skip black for perf?
+
+                // Fill block - Optimization: use fillRect for non-per-pixel access? 
+                // Creating ImageData for 400x400 is fast enough.
+                // We need to fill a 4x4 block for each grid cell [i,j]
+
+                // Note: The loop order in previous code: i (y?), j (x?)
+                // Access sim.u[i*size + j].
+                // Usually i is row (y), j is col (x).
+                // In canvas, x is col, y is row.
+                // If i is row, then y = i * scale. x = j * scale.
+
                 for (let dx = 0; dx < scale; dx++) {
                     for (let dy = 0; dy < scale; dy++) {
-                        const idx = ((i * scale + dx) * width + (j * scale + dy)) * 4;
-                        data[idx] = r;     // R
-                        data[idx + 1] = 0; // G
-                        data[idx + 2] = b; // B
-                        data[idx + 3] = 255; // Alpha
+                        // x = j*scale + dx, y = i*scale + dy
+                        // Index = (y * width + x) * 4
+                        const x = j * scale + dx;
+                        const y = i * scale + dy;
+                        const idx = (y * width + x) * 4;
+
+                        data[idx] = r;
+                        data[idx + 1] = 0;
+                        data[idx + 2] = b;
+                        data[idx + 3] = 255;
                     }
                 }
             }
@@ -61,10 +105,27 @@ export default function PhysicsView() {
         const canvas = canvasRef.current;
         if (!canvas) return;
         const rect = canvas.getBoundingClientRect();
+
+        if (sim.mode === 'rigid') {
+            // Click to spawn? MouseMove doesn't spawn usually.
+            // Let's spawn on click instead.
+            return;
+        }
+
         const x = Math.floor((e.clientY - rect.top) / 4);
         const y = Math.floor((e.clientX - rect.left) / 4);
 
         sim.disturb(x, y, 5.0);
+    };
+
+    const handleClick = (e: React.MouseEvent) => {
+        if (sim.mode !== 'rigid') return;
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / 4;
+        const y = (e.clientY - rect.top) / 4;
+        sim.disturb(x, y, 0); // Disturb uses x,y to add body in rigid mode
     };
 
     return (
@@ -84,10 +145,18 @@ export default function PhysicsView() {
                     >
                         Heat
                     </button>
+                    <button
+                        onClick={() => { sim.mode = 'rigid'; }}
+                        className={`px-3 py-1 rounded ${sim.mode === 'rigid' ? 'bg-green-600' : 'hover:bg-gray-700'}`}
+                    >
+                        Rigid Body
+                    </button>
                 </div>
             </div>
             <p className="mb-4 text-gray-400">
-                {sim.mode === 'wave' ? 'Move mouse to create ripples.' : 'Move mouse to add heat.'}
+                {sim.mode === 'wave' ? 'Move mouse to create ripples.' :
+                    sim.mode === 'heat' ? 'Move mouse to add heat.' :
+                        'Click to spawn bouncing balls.'}
             </p>
 
             <div className="flex items-center gap-2 mb-4">
@@ -106,6 +175,7 @@ export default function PhysicsView() {
                 height={400}
                 className="bg-black rounded border border-gray-700 cursor-crosshair shadow-2xl"
                 onMouseMove={handleMouseMove}
+                onClick={handleClick}
             />
         </div>
     );

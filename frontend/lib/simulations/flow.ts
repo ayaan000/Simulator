@@ -65,8 +65,11 @@ export class FlowSimulator {
     *maxFlow(): Generator<any> {
         this.resetFlow();
         const source = 0;
-        const sink = this.nodes.length - 1;
+        const sink = this.nodes.length - 1; // Always usage last node as sink
         let maxFlow = 0;
+
+        // Ensure edges refer to valid nodes
+        // (No change needed here as long as edges store indices, but good to be aware)
 
         while (true) {
             // BFS to find augmenting path in RESIDUAL graph

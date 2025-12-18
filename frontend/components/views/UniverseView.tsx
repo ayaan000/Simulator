@@ -33,14 +33,27 @@ function Bodies({ bodies }: { bodies: Body[] }) {
 
 
 export default function UniverseView() {
+    // 1. All hooks at the top level
     const [sim] = useState(() => new UniverseSimulator(200));
-    const [bodies, setBodies] = useState<Body[]>(sim.bodies);
+    // We don't strictly need bodies state if we force update via version/running, 
+    // but keeping it if other parts use it. 
+    // Actually, SceneContent reads from sim directly.
     const [running, setRunning] = useState(true);
+    const [version, setVersion] = useState(0);
 
+    // 2. Helper functions
+    const handlePresets = (type: 'solar' | 'blackhole') => {
+        if (type === 'solar') sim.solarSystem();
+        if (type === 'blackhole') sim.blackHole();
+        setVersion(v => v + 1); // Force re-render of scene
+    };
+
+    // 3. Effects
     useEffect(() => {
-        // Interval removed in favor of useFrame in SceneContent
+        // Interval logic is handled by useFrame in SceneContent
     }, [running]);
 
+    // 4. Return JSX
     return (
         <div className="h-full w-full bg-black relative">
             <div className="absolute top-4 left-4 z-10 flex gap-4">
@@ -51,19 +64,19 @@ export default function UniverseView() {
                     {running ? "Pause" : "Resume"}
                 </button>
                 <button
-                    onClick={() => sim.init(200)}
+                    onClick={() => { sim.init(200); setVersion(v => v + 1); }}
                     className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-white"
                 >
                     Reset
                 </button>
                 <button
-                    onClick={() => sim.solarSystem()}
+                    onClick={() => handlePresets('solar')}
                     className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 rounded text-white"
                 >
                     Solar System
                 </button>
                 <button
-                    onClick={() => sim.blackHole()}
+                    onClick={() => handlePresets('blackhole')}
                     className="px-4 py-2 bg-purple-900 hover:bg-purple-800 rounded text-white border border-purple-500"
                 >
                     Black Hole
@@ -73,10 +86,10 @@ export default function UniverseView() {
             <Canvas camera={{ position: [0, 40, 60], fov: 45 }}>
                 <color attach="background" args={['#050505']} />
                 <ambientLight intensity={0.5} />
-                <pointLight position={[0, 0, 0]} intensity={2} color="#ffcc00" /> {/* Sun light */}
+                <pointLight position={[0, 0, 0]} intensity={2} color="#ffcc00" />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
-                <SceneContent sim={sim} running={running} />
+                <SceneContent key={version} sim={sim} running={running} />
 
                 <OrbitControls />
             </Canvas>
