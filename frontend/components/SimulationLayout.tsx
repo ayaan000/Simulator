@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-type SimType = 'sorting' | 'graph' | 'maze' | 'flow' | 'fluid' | 'terraforming' | 'automata' | 'physics' | 'universe';
+type SimType = 'sorting' | 'graph' | 'maze' | 'flow' | 'fluid' | 'terraforming' | 'automata' | 'physics' | 'universe' | 'quantum_course';
 
 interface LayoutProps {
     activeSim: SimType;
@@ -21,6 +21,7 @@ export default function SimulationLayout({ activeSim, setActiveSim, children }: 
         { id: 'automata', label: 'Game of Life', icon: '👾' },
         { id: 'physics', label: 'Physics Engine', icon: '⚛️' },
         { id: 'universe', label: 'Universe', icon: '🌌' },
+        { id: 'quantum_course', label: 'Quantum Course', icon: '🎓' },
     ];
 
     return (

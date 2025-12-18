@@ -52,6 +52,33 @@ export class AutomataSimulator {
         });
     }
 
+    pulsar() {
+        // Clear grid
+        for (let i = 0; i < this.rows; i++) this.grid[i].fill(0);
+
+        const cx = Math.floor(this.cols / 2);
+        const cy = Math.floor(this.rows / 2);
+
+        const pattern = [
+            [-6, -4], [-6, -3], [-6, -2], [-6, 2], [-6, 3], [-6, 4],
+            [-4, -6], [-4, -1], [-4, 1], [-4, 6],
+            [-3, -6], [-3, -1], [-3, 1], [-3, 6],
+            [-2, -6], [-2, -1], [-2, 1], [-2, 6],
+
+            [2, -6], [2, -1], [2, 1], [2, 6],
+            [3, -6], [3, -1], [3, 1], [3, 6],
+            [4, -6], [4, -1], [4, 1], [4, 6],
+
+            [6, -4], [6, -3], [6, -2], [6, 2], [6, 3], [6, 4]
+        ];
+
+        pattern.forEach(([dx, dy]) => {
+            if (cy + dy >= 0 && cy + dy < this.rows && cx + dx >= 0 && cx + dx < this.cols) {
+                this.grid[cy + dy][cx + dx] = 1;
+            }
+        });
+    }
+
     step() {
         const newGrid = this.createGrid();
         for (let i = 0; i < this.rows; i++) {

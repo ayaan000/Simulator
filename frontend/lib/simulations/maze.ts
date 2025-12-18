@@ -21,7 +21,7 @@ export class MazeSimulator {
         this.init();
     }
 
-    init() {
+    init(startX: number = 0, startY: number = 0) {
         this.grid = [];
         for (let r = 0; r < this.rows; r++) {
             for (let c = 0; c < this.cols; c++) {
@@ -33,7 +33,10 @@ export class MazeSimulator {
                 });
             }
         }
-        this.current = this.grid[0];
+        // Start generation from the specified start position
+        this.current = this.grid[this.index(startX, startY)];
+        if (!this.current) this.current = this.grid[0]; // Fallback
+
         this.current.visited = true;
         this.stack = [];
         this.generator = this.generate();

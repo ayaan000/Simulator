@@ -11,6 +11,29 @@ export default function AlgorithmsView() {
     const [algo, setAlgo] = useState('bubble');
     const [speed, setSpeed] = useState(50);
     const [size, setSize] = useState(50);
+    const audioCtxRef = useRef<AudioContext | null>(null);
+    const [audioEnabled, setAudioEnabled] = useState(false);
+
+    useEffect(() => {
+        if (audioEnabled && !audioCtxRef.current) {
+            audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        } else if (!audioEnabled && audioCtxRef.current) {
+            audioCtxRef.current.close();
+            audioCtxRef.current = null;
+        }
+    }, [audioEnabled]);
+
+    const playTone = (freq: number) => {
+        if (!audioCtxRef.current) return;
+        const osc = audioCtxRef.current.createOscillator();
+        const gain = audioCtxRef.current.createGain();
+        osc.frequency.value = freq;
+        osc.connect(gain);
+        gain.connect(audioCtxRef.current.destination);
+        osc.start();
+        gain.gain.exponentialRampToValueAtTime(0.00001, audioCtxRef.current.currentTime + 0.1);
+        osc.stop(audioCtxRef.current.currentTime + 0.1);
+    };
 
     useEffect(() => {
         sim.init(size);
@@ -29,6 +52,11 @@ export default function AlgorithmsView() {
                 setData(step.data);
                 setIndices(step.indices);
                 setSwapped(step.swapped);
+                if (audioEnabled) {
+                    // Play tone for accessed elements
+                    step.indices.forEach(idx => playTone(200 + (step.data[idx] || 0) * 5));
+                    step.swapped.forEach(idx => playTone(500 + (step.data[idx] || 0) * 5));
+                }
                 if (step.done) setRunning(false);
             } else {
                 setRunning(false);
@@ -83,6 +111,14 @@ export default function AlgorithmsView() {
                         onChange={(e) => setSpeed(parseInt(e.target.value))}
                         className="w-32 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
                     />
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={() => setAudioEnabled(!audioEnabled)}
+                        className={`px-3 py-1 rounded text-xs font-bold ${audioEnabled ? 'bg-indigo-600' : 'bg-gray-700 text-gray-400'}`}
+                    >
+                        {audioEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF'}
+                    </button>
                 </div>
             </div>
 

@@ -68,9 +68,15 @@ export default function MazeView() {
     };
 
     const handleStart = () => {
-        sim.init();
-        setStartPos(null);
-        setEndPos(null);
+        // Use current startPos or default (0,0)
+        const sx = startPos ? startPos.x : 0;
+        const sy = startPos ? startPos.y : 0;
+
+        // Ensure start/end are set visually if not already
+        if (!startPos) setStartPos({ x: 0, y: 0 });
+        if (!endPos) setEndPos({ x: sim.cols - 1, y: sim.rows - 1 });
+
+        sim.init(sx, sy);
         setRunning(true);
     };
 

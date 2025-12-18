@@ -7,6 +7,7 @@ export default function FlowView() {
     const [running, setRunning] = useState(false);
     const [log, setLog] = useState<string[]>([]);
     const [highlightEdges, setHighlightEdges] = useState<string[]>([]);
+    const [residualEdges, setResidualEdges] = useState<{ source: number, target: number, cap: number, isBack: boolean }[]>([]);
     const [dragNode, setDragNode] = useState<number | null>(null);
     const [mode, setMode] = useState<'view' | 'add_node' | 'add_edge' | 'edit_cap'>('view');
     const [selectedNode, setSelectedNode] = useState<number | null>(null);
@@ -17,10 +18,12 @@ export default function FlowView() {
             const res = sim.step() as any;
             if (res && !res.done) {
                 setHighlightEdges(res.value.pathEdges || []);
+                setResidualEdges(res.value.residualEdges || []);
                 setLog([...sim.log]);
             } else {
                 setRunning(false);
                 setHighlightEdges([]);
+                setResidualEdges([]);
             }
         }, 500);
         return () => clearInterval(interval);
@@ -100,7 +103,37 @@ export default function FlowView() {
                             <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="28" refY="3.5" orient="auto">
                                 <polygon points="0 0, 10 3.5, 0 7" fill="#4B5563" />
                             </marker>
+                            <marker id="arrowhead-res" markerWidth="8" markerHeight="6" refX="24" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#F59E0B" />
+                            </marker>
                         </defs>
+                        {/* Residual Edges */}
+                        {residualEdges.map((edge, i) => {
+                            const s = sim.nodes[edge.source];
+                            const t = sim.nodes[edge.target];
+                            return (
+                                <g key={`res-${i}`} opacity="0.6">
+                                    <line
+                                        x1={s.x} y1={s.y}
+                                        x2={t.x} y2={t.y}
+                                        stroke="#F59E0B"
+                                        strokeWidth="1"
+                                        strokeDasharray="4 2"
+                                        markerEnd="url(#arrowhead-res)"
+                                    />
+                                    {edge.cap > 0 && <text
+                                        x={(s.x * 2 + t.x) / 3}
+                                        y={(s.y * 2 + t.y) / 3}
+                                        fill="#F59E0B"
+                                        fontSize="10"
+                                        textAnchor="middle"
+                                        className="font-mono bg-black select-none"
+                                    >
+                                        {edge.cap}
+                                    </text>}
+                                </g>
+                            );
+                        })}
                         {/* Edges */}
                         {sim.edges.map(edge => {
                             const s = sim.nodes[edge.source];

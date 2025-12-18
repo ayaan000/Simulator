@@ -38,16 +38,7 @@ export default function UniverseView() {
     const [running, setRunning] = useState(true);
 
     useEffect(() => {
-        if (!running) return;
-        const interval = setInterval(() => {
-            sim.step();
-            // Trigger re-render? 
-            // React state update for 200 bodies at 60fps is bad.
-            // We should mutate ref in a real app, but for this structure we need to force update.
-            // Actually, let's just update a frame counter or rely on useFrame inside Canvas 
-            // reading from the mutable sim object directly!
-        }, 16);
-        return () => clearInterval(interval);
+        // Interval removed in favor of useFrame in SceneContent
     }, [running]);
 
     return (
@@ -71,6 +62,12 @@ export default function UniverseView() {
                 >
                     Solar System
                 </button>
+                <button
+                    onClick={() => sim.blackHole()}
+                    className="px-4 py-2 bg-purple-900 hover:bg-purple-800 rounded text-white border border-purple-500"
+                >
+                    Black Hole
+                </button>
             </div>
 
             <Canvas camera={{ position: [0, 40, 60], fov: 45 }}>
@@ -79,7 +76,7 @@ export default function UniverseView() {
                 <pointLight position={[0, 0, 0]} intensity={2} color="#ffcc00" /> {/* Sun light */}
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
-                <SceneContent sim={sim} />
+                <SceneContent sim={sim} running={running} />
 
                 <OrbitControls />
             </Canvas>
@@ -87,7 +84,7 @@ export default function UniverseView() {
     );
 }
 
-function SceneContent({ sim }: { sim: UniverseSimulator }) {
+function SceneContent({ sim, running }: { sim: UniverseSimulator, running: boolean }) {
     // This component lives inside Canvas and can hook into useFrame loop
     // to read directly from sim without React state overhead
     const meshRef = useRef<THREE.InstancedMesh>(null);
@@ -96,10 +93,10 @@ function SceneContent({ sim }: { sim: UniverseSimulator }) {
     useFrame(() => {
         if (!meshRef.current) return;
 
-        // We assume sim.step() is called externally or we call it here?
-        // Calling it here couples simulation speed to framerate.
-        // Let's call it here for smoothness.
-        sim.step();
+        // Step simulation if running
+        if (running) {
+            sim.step();
+        }
 
         sim.bodies.forEach((body, i) => {
             dummy.position.set(body.x, body.y, body.z);

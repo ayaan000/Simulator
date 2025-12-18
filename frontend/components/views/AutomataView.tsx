@@ -79,6 +79,12 @@ export default function AutomataView() {
                 >
                     Glider Gun
                 </button>
+                <button
+                    onClick={() => { sim.pulsar(); draw(); }}
+                    className="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded"
+                >
+                    Pulsar
+                </button>
             </div>
             <canvas
                 ref={canvasRef}

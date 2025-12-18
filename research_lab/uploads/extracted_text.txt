@@ -1,0 +1,1872 @@
+
+
+
+
+QUANTUM MECHANICS
+A Paradigms Approach
+
+This page intentionally left blank 
+
+Boston   Columbus   Indianapolis   New York   San Francisco   Upper Saddle River  
+Amsterdam   Cape Town   Dubai   London   Madrid   Milan   Munich   Paris   Montréal   Toronto  
+Delhi   Mexico City   São Paulo   Sydney   Hong Kong   Seoul   Singapore   Taipei   Tokyo
+QUANTUM MECHANICS
+A Paradigms Approach
+David H. McIntyre
+Oregon State University
+with contributions from Corinne A. Manogue, Janet Tate  
+and the Paradigms in Physics group at Oregon State University
+
+Publisher: Jim Smith
+Editorial Manager: Laura Kenney
+Senior Project Editor: Katie Conley
+Assistant Editors: Peter Alston and Steven Le
+Senior Marketing Manager: Kerry McGinnis
+Managing Editor: Corinne Benson
+Production Project Manager: Mary O’Connell
+Production Management and Composition: 
+Element LLC
+Cover Design: Mark Ong
+Manufacturing Buyer: Kathy Sleys
+Manager, Rights and Permissions: Zina Arabia
+Manager, Cover Visual Research & 
+Permissions: Karen Sanatar
+Printer and Binder: Courier, Westford
+Cover Printer: Courier, Westford
+Cover Images: David H. McIntyre
+Copyright © 2012 Pearson Education, Inc., publishing as Pearson Addison-Wesley, 1301 Sansome St., San Francisco, 
+CA 94111. All rights reserved. Manufactured in the United States of America. This publication is protected by Copyright 
+and permission should be obtained from the publisher prior to any prohibited reproduction, storage in a retrieval system, 
+or transmission in any form or by any means, electronic, mechanical, photocopying, recording, or likewise. To obtain 
+permission(s) to use material from this work, please submit a written request to Pearson Education, Inc., Permissions 
+Department, 1900 E. Lake Ave., Glenview, IL 60025. For information regarding permissions, call (847) 486-2635.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where 
+those designations appear in this book, and the publisher was aware of a trademark claim, the designations have been printed 
+in initial caps or all caps.
+Library of Congress Cataloging-in-Publication Data
+McIntyre, David H.
+ Quantum mechanics : a paradigms approach / David H. McIntyre ; with  
+contributions from Corinne A. Manogue, Janet Tate, and the Paradigms in 
+Physics group at Oregon State University.
+  p. cm.
+ Includes bibliographical references and index.
+ ISBN-13: 978-0-321-76579-6
+ ISBN-10: 0-321-76579-6
+ 1. Quantum theory. 2. Mechanics.  I. Manogue, Corinne A. II. Tate, Janet.
+III. Oregon State University. IV. Title.
+ QC174.12.M3785 2012
+ 530.12--dc23
+                2011039322
+ISBN 10: 0-321-76579-6  
+ISBN 13: 978-0-321-76579-6
+1 2 3 4 5 6 7 8 9 10 —CRW—16 15 14 13 12 11www.pearsonhighered.com
+
+ v
+ Brief Contents
+ 1 Stern-Gerlach Experiments 1
+ 2 Operators and Measurement 34
+ 3 Schrödinger Time Evolution 68
+ 4 Quantum Spookiness 97
+ 5 Quantized Energies: Particle in a Box 107
+ 6 Unbound States 161
+ 7 Angular Momentum 202
+ 8 Hydrogen Atom 250
+ 9 Harmonic Oscillator 275
+ 10 Perturbation Theory 312
+ 11 Hyperﬁne Structure and the Addition of Angular Momenta 355
+ 12 Perturbation of Hydrogen 382
+ 13 Identical Particles 410
+ 14 Time-Dependent Perturbation Theory 445
+ 15 Periodic Systems 469
+ 16 Modern Applications of Quantum Mechanics 502
+Appendices 529
+Index 553
+
+This page intentionally left blank 
+
+ vii
+Contents
+Preface xiii
+Prologue xix
+ 1 /H17039 Stern-Gerlach Experiments 1
+1.1 Stern-Gerlach Experiment 1
+1.1.1 Experiment 1 5
+1.1.2 Experiment 2 6
+1.1.3 Experiment 3 7
+1.1.4 Experiment 4 8
+1.2 Quantum State Vectors 10
+1.2.1 Analysis of Experiment 1 16
+1.2.2 Analysis of Experiment 2 16
+1.2.3 Superposition States 19
+1.3 Matrix Notation 22
+1.4 General Quantum Systems 25
+1.5 Postulates  27
+Summary 28
+Problems 29
+Resources 32
+Activities 32
+Further Reading 33
+ 2 /H17039 Operators and Measurement 34
+2.1 Operators, Eigenvalues, and Eigenvectors 34
+2.1.1 Matrix Representation of Operators 37
+2.1.2 Diagonalization of Operators 38
+2.2 New Operators 41
+2.2.1 Spin Component in a General Direction 41
+2.2.2 Hermitian Operators 44
+2.2.3 Projection Operators 44
+2.2.4 Analysis of Experiments 3 and 4 47
+2.3 Measurement 50
+2.4 Commuting Observables 54
+2.5 Uncertainty Principle 56
+2.6 S2 Operator 57
+2.7 Spin-1 System 59
+
+viii Contents 
+2.8 General Quantum Systems 62
+Summary 63
+Problems 64
+Resources 67
+Activities 67
+ 3 /H17039 Schrödinger Time Evolution 68
+3.1 Schrödinger Equation 68
+3.2 Spin Precession 72
+3.2.1 Magnetic Field in the z-Direction 72
+3.2.2 Magnetic Field in a General Direction 78
+3.3 Neutrino Oscillations 84
+3.4 Time-Dependent Hamiltonians 87
+3.4.1 Magnetic Resonance 87
+3.4.2 Light-Matter Interactions 92
+Summary 93
+Problems 94
+Resources 96
+Activities 96
+Further Reading 96
+ 4 /H17039 Quantum Spookiness 97
+4.1 Einstein-Podolsky-Rosen Paradox 97
+4.2 Schrödinger Cat Paradox 102
+Problems 105
+Resources 106
+Further Reading 106
+ 5 /H17039 Quantized Energies: Particle in a Box 107
+5.1 Spectroscopy 107
+5.2 Energy Eigenvalue Equation 110
+5.3 The Wave Function 112
+5.4 Inﬁnite Square Well 119
+5.5 Finite Square Well 128
+5.6 Compare and Contrast 133
+5.6.1 Wave Function Curvature 133
+5.6.2 Nodes 135
+5.6.3 Barrier Penetration 135
+5.6.4 Inversion Symmetry and Parity 136
+5.6.5 Orthonormality 136
+5.6.6 Completeness 137
+5.7 Superposition States and Time Dependence 137
+5.8 Modern Application: Quantum Wells and Dots 146
+5.9  Asymmetric Square Well: Sneak Peek at  
+Perturbations 147
+5.10  Fitting Energy Eigenstates by Eye or by  
+Computer 150
+5.10.1 Qualitative (Eyeball) Solutions 150
+
+Contents   ix
+5.10.2 Numerical Solutions 151
+5.10.3 General Potential Wells 154
+Summary 154
+Problems 156
+Resources 159
+Activities 159
+Further Reading 160
+ 6 /H17039 Unbound States 161
+6.1 Free Particle Eigenstates 161
+6.1.1 Energy Eigenstates 161
+6.1.2 Momentum Eigenstates 163
+6.2 Wave Packets 168
+6.2.1 Discrete Superposition 168
+6.2.2 Continuous Superposition 171
+6.3 Uncertainty Principle 176
+6.3.1 Energy Estimation 180
+6.4 Unbound States and Scattering 181
+6.5 Tunneling Through Barriers 188
+6.6 Atom Interferometry 192
+Summary 197
+Problems 197
+Resources 201
+Activities 201
+Further Reading 201
+ 7 /H17039 Angular Momentum 202
+7.1  Separating Center-of-Mass and Relative  
+Motion 204
+7.2  Energy Eigenvalue Equation in Spherical  
+Coordinates 208
+7.3 Angular Momentum 210
+7.3.1 Classical Angular Momentum 210
+7.3.2  Quantum Mechanical Angular  
+Momentum 210
+7.4 Separation of Variables: Spherical Coordinates 215
+7.5 Motion of a Particle on a Ring 218
+7.5.1 Azimuthal Solution 220
+7.5.2  Quantum Measurements on a Particle  
+Conﬁned to a Ring 223
+7.5.3 Superposition States 224
+7.6 Motion on a Sphere 227
+7.6.1 Series Solution of Legendre’s Equation 228
+7.6.2 Associated Legendre Functions 233
+7.6.3 Energy Eigenvalues of a Rigid Rotor 236
+7.6.4 Spherical Harmonics 237
+7.6.5 Visualization of Spherical Harmonics 240
+
+x Contents 
+Summary 245
+Problems 245
+Resources 249
+Activities 249
+ 8 /H17039 Hydrogen Atom 250
+8.1 The Radial Eigenvalue Equation 250
+8.2 Solving the Radial Equation 252
+8.2.1  Asymptotic Solutions to the Radial  
+Equation 252
+8.2.2 Series Solution to the Radial Equation 253
+8.3 Hydrogen Energies and Spectrum 256
+8.4 The Radial Wave Functions 261
+8.5 The Full Hydrogen Wave Functions 263
+8.6 Superposition States 270
+Summary 272
+Problems 272
+Resources 274
+Activities 274
+Further Reading 274
+ 9 /H17039 Harmonic Oscillator 275
+9.1 Classical Harmonic Oscillator 275
+9.2 Quantum Mechanical Harmonic Oscillator 277
+9.3 Wave Functions 284
+9.4 Dirac Notation 289
+9.5 Matrix Representations 293
+9.6 Momentum Space Wave Function 296
+9.7 The Uncertainty Principle 298
+9.8 Time Dependence 300
+9.9 Molecular Vibrations 305
+Summary 307
+Problems 308
+Resources 311
+Activities 311
+Further Reading 311
+ 10 /H17039 Perturbation Theory 312
+10.1 Spin-1/2 Example 313
+10.2 General Two-Level Example 317
+10.3 Nondegenerate Perturbation Theory 319
+10.3.1 First-Order Energy Correction 320
+10.3.2 First-Order State Vector Correction 324
+10.4  Second-Order Nondegenerate Perturbation  
+Theory 329
+10.5 Degenerate Perturbation Theory 336
+10.6 More Examples 343
+
+Contents   xi
+10.6.1 Harmonic Oscillator 343
+10.6.2 Stark Effect in Hydrogen 346
+Summary 351
+Problems 352
+ 11 /H17039  Hyperﬁne Structure and the Addition of 
+Angular Momenta 355
+11.1 Hyperﬁne Interaction 355
+11.2 Angular Momentum Review 357
+11.3 Angular Momentum Ladder Operators 359
+11.4 Diagonalization of the Hyperﬁne Perturbation 361
+11.5 The Coupled Basis 365
+11.6 Addition of Generalized Angular Momenta 370
+11.7  Angular Momentum in Atoms and Spectroscopic  
+Notation 377
+Summary 377
+Problems 379
+Resources 381
+Activities 381
+Further Reading 381
+ 12 /H17039 Perturbation of Hydrogen 382
+12.1 Hydrogen Energy Levels 382
+12.2 Fine Structure of Hydrogen 386
+12.2.1 Relativistic Correction 386
+12.2.2 Spin-Orbit Coupling 388
+12.3 Zeeman Effect 393
+12.3.1 Zeeman Effect without Spin 394
+12.3.2 Zeeman Effect with Spin 396
+12.3.2.1 Weak magnetic ﬁeld 396
+12.3.2.2 Strong magnetic ﬁeld 402
+12.3.2.3 Intermediate magnetic ﬁeld 403
+12.3.3  Zeeman Perturbation of the 1s 
+Hyperﬁne Structure 405
+Summary 407
+Problems 407
+Resources 409
+Activities 409
+Further Reading 409
+ 13 /H17039 Identical Particles 410
+13.1 Two Spin-1/2 Particles 410
+13.2 Two Identical Particles in One Dimension 414
+13.2.1 Two-Particle Ground State 415
+13.2.2 Two-Particle Excited State 416
+13.2.3 Visualization of States 417
+13.2.4 Exchange Interaction 420
+
+xii Contents 
+13.2.5  Consequences of the Symmetrization  
+Postulate 421
+13.3 Interacting Particles 423
+13.4 Example: The Helium Atom 427
+13.4.1 Helium Ground State 428
+13.4.2 Helium Excited States 431
+13.5 The Periodic Table 434
+13.6 Example: The Hydrogen Molecule 437
+13.6.1 The Hydrogen Molecular Ion H
+2
++ 438
+13.6.2 The Hydrogen Molecule H2 440
+Summary 442
+Problems 442
+Resources 444
+Further Reading 444
+ 14 /H17039 Time-Dependent Perturbation Theory 445
+14.1 Transition Probability 445
+14.2 Harmonic Perturbation 450
+14.3 Electric Dipole Interaction 454
+14.3.1 Einstein Model: Broadband Excitation 456
+14.3.2 Laser Excitation 460
+14.4 Selection Rules 462
+Summary 466
+Problems 467
+Resources 468
+Further Reading 468
+ 15 /H17039 Periodic Systems 469
+15.1  The Energy Eigenvalues and Eigenstates of a  
+Periodic Chain of Wells 471
+15.1.1 A Two-Well Chain 471
+15.1.2 N-Well Chain 473
+15.2  Boundary Conditions and the Allowed Values  
+of 
+k 476
+15.3 The Brillouin Zones 478
+15.4 Multiple Bands from Multiple Atomic Levels 478
+15.5 Bloch’s Theorem and the Molecular States 480
+15.6 Molecular Wave Functions—a Gallery 482
+15.7 The Density of States 484
+15.8 Calculation of the Model Parameters 486
+15.8.1 LCAO Summary 488
+15.9 The Kronig-Penney Model 489
+15.10  Practical Applications: Metals, Insulators, and  
+Semiconductors 491
+15.11 Effective Mass 494
+15.12 Direct and Indirect Band Gaps 496
+15.13 New Directions—Low-Dimensional Carbon 497
+
+Contents   xiii
+Summary 498
+Problems 499
+Resources 500
+Activities 500
+Further Reading 500
+ 16 /H17039 Modern Applications of Quantum Mechanics 502
+16.1  Manipulating Atoms with Quantum  
+Mechanical Forces 502
+16.1.1 Magnetic Trapping 502
+16.1.2 Laser Cooling 506
+16.2 Quantum Information Processing 514
+16.2.1 Quantum Bits—Qubits 515
+16.2.2 Quantum Gates 518
+16.2.3 Quantum Teleportation 524
+Summary 526
+Problems 527
+Resources 528
+Further Reading 528
+Appendix A: Probability 529
+Appendix B: Complex Numbers 533
+Appendix C: Matrices 537
+Appendix D: Waves and Fourier Analysis 541
+Appendix E: Separation of Variables 547
+Appendix F: Integrals 549
+Appendix G: Physical Constants 551
+Index 553
+
+This page intentionally left blank 
+
+ xv
+Preface
+This text is designed to introduce undergraduates at the junior and senior levels to quantum mechan-
+ics. The text is an outgrowth of the new physics major curriculum developed by the Paradigms in 
+Physics program at Oregon State University. This new curriculum distributes material from the sub-
+disciplines throughout the two upper-division years and provides students with a more gradual tran-
+sition between introductory and advanced levels. We have also incorporated and developed modern 
+pedagogical strategies to help improve student learning. This text covers the quantum mechanical 
+aspects of our curriculum in a way that can also be used in traditional curricula, but that still pre-
+serves the advantages of the Paradigms approach to the ordering of materials and the use of student 
+engagement activities.
+PARADIGMS PROGRAM
+The Paradigms project began in 1997, when the Department of Physics at Oregon State University 
+began an extensive revision of the upper-division physics major. In an effort to encourage students 
+to draw connections between the subdisciplines of physics, the structure of the Paradigms has been 
+crafted to mimic the organization of expert physics knowledge. Students are presented with a model 
+of how physicists organize their understanding of physical phenomena and problem solving. Each 
+of the nine short junior-year Paradigms courses focuses on a speciﬁc paradigm or class of physics 
+problems that serves as the centerpiece of the course and on which different tools and skills are built. 
+In the senior year, students resume a more traditional curriculum, taking six capstone courses in 
+the traditional disciplines. This curriculum incorporates a diverse set of student activities that allow 
+students to stay actively engaged in the classroom and to work together in constructing their under-
+standing of physics. Computer resources are used frequently to help students visualize the systems 
+they are studying.
+CONTENT AND APPROACH
+Quantum mechanics is integrated into four of the junior-year Paradigms courses and one senior-year 
+capstone course at Oregon State University. This text includes all the quantum mechanics topics 
+covered in those ﬁve courses. We adopt a “spins-ﬁrst” approach by introducing quantum mechanics 
+through the analysis of sequential Stern-Gerlach spin measurements. This approach is based upon 
+previous presentations of spin systems by Feynman, Leighton, and Sands; Cohen-Tannoudji, Diu, 
+and Laloe; Sakurai; and Townsend. The aim of the spins-ﬁrst approach is twofold: (1) To imme-
+diately immerse students in the inherently quantum mechanical aspects of physics by focusing on 
+simple measurements that have no classical explanation, and (2) To give students early and extensive 
+experience with the mechanics of quantum mechanics in the forms of Dirac and matrix notation. 
+
+xvi Preface 
+The  simplicity of the spin-1/2 and spin-1 systems allows the students to focus on these new features, 
+which run counter to classical mechanics.
+The ﬁrst three chapters of this text deal exclusively with spin systems and extensions to general 
+two- and three-state quantum mechanical systems. The basic postulates of quantum mechanics are 
+illustrated through their manifestation in the Stern-Gerlach experiments. After these three chapters, 
+students have the tools to tackle any quantum mechanical problem presented in Dirac or matrix 
+notation. After a brief interlude into quantum spookiness (the EPR Paradox and Schrödinger’s cat) 
+in Chapter 4, we tackle the traditional wave function aspects of quantum mechanics. We present 
+several quantum systems—a particle in a box, on a ring, on a sphere, the hydrogen atom, and the 
+harmonic oscillator—and emphasize their common features and their connections to the basic pos-
+tulates. The differential equations of angular momentum and the hydrogen atom radial problem are 
+solved in detail to expose students to the rigor of series solutions, though we stress that these are 
+again eigenvalue equations, no different in principle from the spin eigenvalue equations. Whenever 
+possible, we continue the use of Dirac notation and matrix notation learned in the spin chapters, 
+emphasizing the importance of ﬂuency in multiple representations. We build upon the spins-ﬁrst 
+approach by using the spin-1/2 example to introduce perturbation theory, the addition of angular 
+momentum, and identical particles.
+USAGE
+At Oregon State University, the content of this text is taught in ﬁve courses as shown below.
+Junior-Year Paradigms Courses
+Spin and Quantum 
+Measurement Waves Central Forces Period Systems
+1.  Stern-Gerlach  
+Experiments
+2.  Operators and  
+Measurement
+3.  Schrödinger Time 
+Evolution
+4. Quantum Spookiness
+Mechanical waves 
+and EM waves
+5.  Quantized Energies:  
+Particle in a Box
+6. Unbound States
+Planetary orbits
+7.  Angular  
+Momentum
+8. Hydrogen Atom
+Coupled 
+Oscillations
+15.  Periodic  
+Systems
+Senior-Year Quantum Mechanics Capstone Course
+ 9. Harmonic Oscillator
+10. Perturbation Theory
+11.  Hyperﬁne Structure 
+and the Addition of 
+Angular Momentum
+12.  Perturbation of 
+Hydrogen
+13. Identical Particles
+14.  Time-Dependent 
+Perturbation 
+Theory
+16.  Modern 
+Applications
+For a traditional curriculum, the content of this text would cover a full-year course, either two 
+semesters or three quarters. A proposed weekly outline for two 15-week semesters or three 10-week 
+quarters is shown below.
+
+Preface  xvii
+Week Chapter Topics
+1 1 Stern-Gerlach experiment, Quantum State Vectors, Bra-ket notation 
+2 1 Matrix notation, General Quantum Systems
+3 2 Operators, Measurement, Commuting Observables
+4 2 Uncertainty Principle, S
+2 Operator, Spin-1 System
+5 3 Schrödinger Equation, Time Evolution
+6 3 Spin Precession, Neutrino Oscillations, Magnetic Resonance
+7 4 EPR Paradox, Bell’s Inequalities, Schrödinger’s Cat
+8 5 Energy Eigenvalue Equation, Wave Function
+9 5 One-Dimensional Potentials, Finite Well, Inﬁnite Well
+10 6 Free Particle, Wave Packets, Momentum Space
+11 6 Uncertainty Principle, Barriers
+12 7 Three-Dimensional Energy Eigenvalue Equation, Separation of Variables
+13 7 Angular Momentum, Motion on a Ring and Sphere, Spherical Harmonics
+14 8 Hydrogen Atom, Radial Equation, Energy Eigenvalues
+15 8 Hydrogen Wave Functions, Spectroscopy
+16 9 1-D Harmonic Oscillator, Operator Approach, Energy Spectrum
+17 9 Harmonic Oscillator Wave Functions, Matrix Representation
+18 9 Momentum Space Wave Functions, Time Dependence, Molecular Vibrations
+19 10 Time-Independent Perturbation Theory: Nondegenerate, Degenerate
+20 10 Perturbation Examples: Harmonic Oscillator, Stark Effect in Hydrogen
+21 11 Hyperﬁne Structure, Coupled Basis
+22 11 Addition of Angular Momenta, Clebsch-Gordan Coefﬁcients
+23 12 Hydrogen Atom: Fine Structure, Spin-Orbit, Zeeman Effect
+24 13 Identical Particles, Symmetrization, Helium Atom
+25 14 Time-Dependent Perturbation Theory, Harmonic Perturbation
+26 14 Radiation, Selection Rules
+27 15 Periodic Potentials, Bloch’s Theorem
+28 15 Dispersion Relation, Density of States, Semiconductors
+29 16 Modern Applications of Quantum Mechanics, Laser Cooling and Trapping
+30 16 Quantum Information Processing
+
+xviii Preface 
+AUDIENCE AND EXPECTED BACKGROUND
+The intended audience is junior and senior physics majors, who are expected to have taken intermediate-
+level courses in modern physics and linear algebra. No other upper-level physics or mathematics courses 
+are required. For our own students, we review matrix algebra in a seven contact hour “preface” course 
+that precedes the Paradigms courses that teach quantum mechanics. The material for that preface course 
+is in Appendix C. The material in Appendix B summarizes an earlier Paradigms course on oscillations, 
+and the material in Appendix D summarizes the classical wave part of the Paradigms course on waves.
+STUDENT ACTIVITIES AND WEBSITE
+Student engagement activities are an integral part of the Paradigms curriculum. All of the activities 
+that we have developed are freely available on our wiki website:
+http://physics.oregonstate.edu/portfolioswiki
+The wiki contains a wealth of information about the Paradigms project, the courses we teach, and the 
+materials we have developed. Details about individual activities include descriptions, student handouts, 
+instructor’s guides, advice about how to use active engagement strategies, videos of classroom prac-
+tice, narratives of classroom activities, and comments from users—both internal and external to Oregon 
+State University. This is a dynamic website that is continually updated as we develop new activities and 
+improve existing ones. We encourage you to visit the website and join the community. E-mail us with 
+corrections, additions, and suggestions.
+Each of the quantum mechanics activities that we use in our ﬁve courses is referenced in the 
+resource section at the end of the appropriate chapter in the text. The quantum mechanics activities are 
+collected within the wiki website with a direct link: 
+www.physics.oregonstate.edu/qmactivities 
+These activities include different types of activities such as computer-based activities, group activities, 
+and class response activities. The most extensive activity is a computer simulation of Stern-Gerlach 
+experiments. This SPINS software is a full-featured, menu-driven application that allows students to 
+simulate successive Stern-Gerlach measurements and explore incompatible observables, eigenstate 
+expansions, interference, and quantum dynamics. The use of the SPINS software facilitates our spins-
+ﬁrst approach. The beauty of the simulation is that students steeped in classical physics perform a foun-
+dational quantum experiment and learn the most fascinating and counterintuitive aspects of quantum 
+mechanics at an early stage.
+ACKNOWLEDGMENTS
+This work is the product of a broad and energetic community of educators and students within the 
+Paradigms in Physics program. I thank all of our students for their hard work, insights, and innu-
+merable suggestions. My colleagues Corinne Manogue and Janet Tate have developed some of the 
+courses upon which this text is based. They have worked with me throughout the writing of this text 
+and I am indebted to them for their valuable contributions. I gratefully acknowedge my fellow faculty 
+who have developed and taught in the new curriculum: Dedra Demaree, Tevian Dray, Tomasz Gieb-
+ultowicz, Elizabeth Gire, William Hetherington, Henri Jansen, Kenneth Krane, Yun-Shik Lee, Victor 
+Madsen, Ethan Minot, Oksana Ostroverkhova, David Roundy, Philip Siemens, Albert Stetz, William 
+
+Preface   xix
+Warren, and Allen Wasserman. I would also like to acknowledge the important contributions of early 
+teaching assistants Kerry Browne, Jason Janesky, Cheryl Klipp, Katherine Meyer, Steve Sahyun, and 
+Emily Townsend—their expertise, dedication, and enthusiasm were above and beyond the call of 
+duty. The many subsequent teaching assistants have also been enthusiastic and valued contributors. 
+I also thank those who have contributed in various ways to the development of activities: Mario Bel-
+loni, Tim Budd, Wolfgang Christian, Paco Esquembre, Lichun Jia, and Shannon Mayer. I particularly 
+thank Daniel Schroeder for sharing his original SPINS software. I acknowledge useful and construc-
+tive feedback from Jeffrey Dunham, Joshua Folk, Rubin Landau, Edward (Joe) Redish, Joseph Roth-
+berg, Homeyra Sadaghiani, Daniel Schroeder, Chandralekha Singh, and Daniel Styer. The Paradigms 
+advisory committee has also provided valuable feedback and I acknowledge David Grifﬁths, Bruce 
+Mason, William McCallum, Harriett Platsek, and Michael Wittmann for their help. I am grateful to the 
+successive Physics Department chairs, Kenneth Krane and Henri Jansen, and Deans Fred Horne and 
+Sherman Bloomer at Oregon State University for their endorsement of the Paradigms project.
+This material is based on work supported by the National Science Foundation under Grant Nos. 
+9653250, 0231194, and 0618877. Any opinions, ﬁndings, and conclusions or recommendations 
+expressed in this material are those of the authors and do not necessarily reﬂect the views of the 
+National Science Foundation. I thank Duncan McBride and Jack Hehn for their encouragement and 
+support of our endeavor.
+Jim Smith at Addison Wesley has been enthusiastic about this project from the early stages. Peter 
+Alston has navigated me through the editorial process with skill and patience. I am grateful to them 
+and also to Katie Conley, Steven Le, and the rest of the staff at Addison Wesley for their work to pro-
+duce this text.
+David H. McIntyre
+Corvallis, Oregon  
+November 2011
+
+This page intentionally left blank 
+
+ xxi
+Prologue
+It was a dark and stormy night. Erwin huddled under his covers as he had done numerous times that 
+summer. As the wind and rain lashed at the window, he feared having to retreat to the storm cellar 
+once again. The residents of Erwin’s apartment building sought shelter whenever there were threats of 
+tornadoes in the area. While it was safe down there, Erwin feared the ridicule he would face once again 
+from the other school boys. In the rush to the cellar, Erwin seemed to always end up with a random 
+pair of socks, and the other boys teased him about it mercilessly.
+Not that Erwin hadn’t tried hard to solve this problem. He had a very simple collection of 
+socks—black or white, for either school or play; short or long, for either trousers or lederhosen. 
+After the ﬁrst few teasing episodes from the other boys, Erwin had sorted his socks into two sepa-
+rate drawers. He placed all the black socks in one drawer and all the white socks in another drawer. 
+Erwin ﬁgured he could determine an individual sock’s length in the dark of night simply by feel-
+ing it, but he had to have them presorted into white and black because the apartment generally lost 
+power before the call to the shelter.
+Unfortunately, Erwin found that this presorting of the socks by color was ineffective. Whenever 
+he reached into the white sock drawer and chose two long socks, or two short socks, there was a 50% 
+probability of any one sock being black or white. The results from the black sock drawer were the 
+same. The socks seemed to have “forgotten” the color that Erwin had determined previously.
+Erwin also tried sorting the socks into two drawers based upon their length, without regard to 
+color. When he chose black or white socks from these long and short drawers, the socks had also “for-
+gotten” whether they were long or short.
+After these fruitless attempts to solve his problem through experiments, Erwin decided to save 
+himself the fashion embarrassment, and he replaced his sock collection with a set of medium length 
+brown socks. However, he continued to ponder the mysteries of the socks throughout his childhood.
+After many years of daydreaming about the mystery socks, Erwin Schrödinger proposed his the-
+ory of “Quantum Socks” and become famous. And that is the beginning of the story of the quantum 
+socks.
+The End.
+Farfetched?? You bet. But Erwin’s adventure with his socks is the way quantum mechanics works. 
+Read on.
+
+This page intentionally left blank 
+
+ 1
+CHAPTER  
+1 Stern-Gerlach Experiments
+It was not a dark and stormy night when Otto Stern and Walther  Gerlach performed their now famous 
+experiment in 1922. The Stern-Gerlach experiment demonstrated that measurements on microscopic 
+or quantum particles are not always as certain as we might expect. Quantum particles behave as mys-
+teriously as Erwin’s socks—sometimes forgetting what we have already measured. Erwin’s adven-
+ture with the mystery socks is farfetched because you know that everyday objects do not behave like 
+his socks. If you observe a sock to be black, it remains black no matter what other properties of the 
+sock you observe. However, the Stern- Gerlach experiment goes against these ideas. Microscopic or 
+quantum particles do not behave like the classical objects of your everyday experience. The act of 
+observing a quantum particle affects its measurable properties in a way that is foreign to our classical 
+experience.
+In these ﬁrst three chapters, we focus on the Stern-Gerlach experiment because it is a conceptu-
+ally simple experiment that demonstrates many basic principles of quantum mechanics. We discuss 
+a variety of experimental results and the quantum theory that has been developed to predict those 
+results. The mathematical formalism of quantum mechanics is based upon six postulates that we will 
+introduce as we develop the theoretical framework. (A complete list of these postulates is in Section 1.5.) 
+We use the Stern-Gerlach experiment to learn about quantum mechanics theory for two primary reasons: 
+(1) It demonstrates how quantum mechanics works in principle by illustrating the postulates of quan-
+tum mechanics, and (2) it demonstrates how quantum mechanics works in practice through the use 
+of Dirac notation and matrix mechanics to solve problems. By using a simple example, we can focus 
+on the principles and the new mathematics, rather than having the complexity of the physics obscure 
+these new aspects.
+1.1 /H17039 STERN-GERLACH EXPERIMENT
+In 1922 Otto Stern and Walther Gerlach performed a seminal experiment in the history of quantum 
+mechanics. In its simplest form, the experiment consisted of an oven that produced a beam of neu-
+tral atoms, a region of space with an inhomogeneous magnetic ﬁeld, and a detector for the atoms, as 
+depicted in Fig. 1.1. Stern and Gerlach used a beam of silver atoms and found that the beam was split 
+into two in its passage through the magnetic ﬁeld. One beam was deﬂected upwards and one down-
+wards in relation to the direction of the magnetic ﬁeld gradient.
+To understand why this result is so at odds with our classical expectations, we must ﬁrst analyze 
+the experiment classically. The results of the experiment suggest an interaction between a neutral parti-
+cle and a magnetic ﬁeld. We expect such an interaction if the particle possesses a magnetic moment M.
+The potential energy of this interaction is E = -M~B, which results in a force F = /H116121M~B2. In the 
+
+2 Stern-Gerlach Experiments
+Stern-Gerlach experiment, the magnetic ﬁeld gradient is primarily in the z-direction, and the resulting 
+z-component of the force is
+  Fz = 0
+0z  1M~B2 
+(1.1)
+  /H11061mz 
+0Bz
+0z  . 
+This force is perpendicular to the direction of motion and deﬂects the beam in proportion to the com-
+ponent of the magnetic moment in the direction of the magnetic ﬁeld gradient.
+Now consider how to understand the origin of the atom’s magnetic moment from a classical view-
+point. The atom consists of charged particles, which, if in motion, can produce loops of current that give 
+rise to magnetic moments. A loop of area A and current I produces a magnetic moment
+ m = IA (1.2)
+in MKS units. If this loop of current arises from a charge q traveling at speed v in a circle of radius r, 
+then
+  m = q
+2pr>v pr2 
+  = qrv
+2  (1.3)
+  = q
+2m L , 
+where L = mrv is the orbital angular momentum of the particle. In the same way that the earth 
+revolves around the sun and rotates around its own axis, we can also imagine a charged particle in 
+an atom having orbital angular momentum  L and a new property, the intrinsic angular momen-
+tum, which we label S and call spin. The intrinsic angular momentum also creates current loops, 
+so we expect a similar relation between the magnetic moment M and S. The exact calculation 
+x
+Oven
+Collimator Magnet Detector Magnet
+Cross-Section
+y
+z
+SS
+NN
+FIGURE 1.1 Stern-Gerlach experiment to measure the spin component of neutral 
+particles along the z-axis. The magnet cross section at right shows the inhomogeneous 
+ﬁeld used in the experiment.
+
+1.1 Stern-Gerlach Experiment 3
+involves an integral over the charge distribution, which we will not do. We simply assume that we 
+can relate the magnetic moment to the intrinsic angular momentum in the same fashion as Eq. (1.3), 
+giving
+ M = g q
+2m S , (1.4)
+where the dimensionless gyroscopic ratio g contains the details of that integral.
+A silver atom has 47 electrons, 47 protons, and 60 or 62 neutrons (for the most common isotopes). 
+The magnetic moments depend on the inverse of the particle mass, so we expect the heavy protons and 
+neutrons (/H110152000 me) to have little effect on the magnetic moment of the atom and so we neglect them. 
+From your study of the periodic table in chemistry, you recall that silver has an electronic conﬁgura-
+tion 1s22s22p63s23p64s23d104p64d105s1, which means that there is only the lone 5 s electron outside 
+of the closed shells. The electrons in the closed shells can be represented by a spherically symmetric 
+cloud with no orbital or intrinsic angular momentum (unfortunately we are injecting some quantum 
+mechanical knowledge of atomic physics into this classical discussion). That leaves the lone 5 s elec-
+tron as a contributor to the magnetic moment of the atom as a whole. An electron in an s state has no 
+orbital angular momentum, but it does have spin. Hence the magnetic moment of this electron, and 
+therefore of the entire neutral silver atom, is
+ M = -g
+ e
+2me
+ S , (1.5)
+where e is the magnitude of the electron charge. The classical force on the atom can now be written as
+ Fz /H11061-g e
+2me
+ Sz 
+0Bz
+0z  . (1.6)
+The deﬂection of the beam in the Stern-Gerlach experiment is thus a measure of the component (or pro-
+jection) Sz of the spin along the z-axis, which is the orientation of the magnetic ﬁeld gradient.
+If we assume that the 5s electron of each atom has the same magnitude 0S 0 of the intrinsic angular 
+momentum or spin, then classically we would write the z-component as Sz = 0S 0cos u, where u is 
+the angle between the z-axis and the direction of the spin S. In the thermal environment of the oven, 
+we expect a random distribution of spin directions and hence all possible angles u. Thus we expect 
+some continuous distribution (the details are not important) of spin components from Sz = - 0S 0 to  
+Sz = + 0S 0, which would yield a continuous spread in deﬂections of the silver atomic beam. Rather, 
+the experimental result that Stern and Gerlach observed was that there are only two deﬂections, indi-
+cating that there are only two possible values of the z-component of the electron spin. The magnitudes 
+of these deﬂections are consistent with values of the spin component of
+ Sz = {U
+2 ,  (1.7)
+where U is Planck’s constant h divided by 2p and has the numerical value
+  U= 1.0546 * 10- 34  J~s 
+  = 6.5821 * 10- 16  eV~s.  
+(1.8)
+This result of the Stern-Gerlach experiment is evidence of the quantization  of the electron’s 
+spin angular momentum component along an axis. This quantization is at odds with our classical 
+
+4 Stern-Gerlach Experiments
+expectations for this measurement. The factor of 1/2 in Eq. (1.7) leads us to refer to this as a 
+spin-1/2 system.
+In this example, we have chosen the z-axis along which to measure the spin component, but there 
+is nothing special about this direction in space. We could have chosen any other axis and we would 
+have obtained the same results.
+Now that we know the ﬁne details of the Stern-Gerlach experiment, we simplify the experiment 
+for the rest of our discussions by focusing on the essential features. A simpliﬁed schematic representa-
+tion of the experiment is shown in Fig. 1.2, which depicts an oven that produces the beam of atoms, a 
+Stern-Gerlach device with two output ports for the two possible values of the spin component, and two 
+counters to detect the atoms leaving the output ports of the Stern-Gerlach device. The Stern-Gerlach 
+device is labeled with the axis along which the magnetic ﬁeld is oriented. The up and down arrows 
+indicate the two possible measurement results for the device; they correspond respectively to the 
+results S
+z = {U>2 in the case where the ﬁeld is oriented along the z-axis. There are only two possible 
+results in this case, so they are generally referred to as spin up and spin down. The physical quantity 
+that is measured, Sz in this case, is called an observable. In our detailed discussion of the experiment 
+above, we chose the ﬁeld gradient in such a manner that the spin up states were deﬂected upwards. 
+In this new simpliﬁcation, the deﬂection itself is not an important issue. We simply label the output 
+port with the desired state and count the particles leaving that port. The Stern-Gerlach device sorts 
+(or ﬁlters, selects or analyzes) the incoming particles into the two possible outputs S
+z = {U>2 in the 
+same way that Erwin sorted his socks according to color or length. We follow convention and refer to 
+a Stern-Gerlach device as an analyzer.
+In Fig. 1.2, the input and output beams are labeled with a new symbol called a ket. We use the 
+ket 
+0 +9 as a mathematical representation of the quantum state of the atoms that exit the upper port 
+corresponding to Sz = +U>2. The lower output beam is labeled with the ket 0 -9, which corresponds 
+to Sz = -U>2, and the input beam is labeled with the more generic ket 0 c9. The kets are representa-
+tions of the quantum states. They are used in mathematical expressions and they represent all the 
+information that we can know about the state. This ket notation was developed by Paul A. M. Dirac 
+and is central to the approach to quantum mechanics that we take in this text. We will discuss the 
+mathematics of these kets in full detail later. With regard to notation, you will ﬁnd many different 
+ways of writing the same ket. The symbol within the ket brackets is any simple label to distinguish 
+the ket from other different kets. For example, the kets 
+0 +9, 0 +U>29, 0Sz = +U>29, 0 +zn9, and 0c 9 
+are all equivalent ways of writing the same thing, which in this case signiﬁes that we have measured 
+the z-component of the spin and found it to be +U>2 or spin up. Though we may label these kets in 
+different ways, they all refer to the same physical state and so they all behave the same mathemati-
+cally. The symbol 
+0{9 refers to both the 0 +9 and 0 -9 kets. The ﬁrst postulate of quantum mechanics 
+tells us that kets in general describe the quantum state mathematically and that they contain all the 
+information that we can know about the state. We denote a general ket as 0 c9.
+Z
+50
+50
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1
+/LBracketBar1Ψ/RAngleBracket1
+FIGURE 1.2 Simpliﬁed schematic of the Stern-Gerlach experiment, 
+depicting a source of atoms, a Stern-Gerlach analyzer, and two counters.
+
+1.1 Stern-Gerlach Experiment 5
+Postulate 1
+The state of a quantum mechanical system, including all the information you 
+can know about it, is represented mathematically by a normalized ket 0 c9.
+We have chosen the particular simpliﬁed schematic representation of the Stern-Gerlach 
+experiment shown in Fig. 1.2, because it is the same representation used in the SPINS software 
+program that you may use to simulate these experiments. The SPINS program allows you to per-
+form all the experiments described in this text. This software is freely available, as detailed in 
+Resources at the end of the chapter. In the SPINS program, the components are connected with 
+simple lines to represent the paths the atoms take. The directions and magnitudes of deﬂections 
+of the beams in the program are not relevant. That is, whether the spin up output beam is drawn 
+as deﬂected upwards, downwards, or not at all, is not relevant. The labeling on the output port is 
+enough to tell us what that state is. Thus the extra ket label 
+0 +9 on the spin up output beam in Fig. 
+1.2 is redundant and will be dropped soon.
+The SPINS program permits alignment of Stern-Gerlach analyzing devices along all three axes 
+and also at any angle f measured from the x-axis in the x-y plane. This would appear to be difﬁcult, if 
+not impossible, given that the atomic beam in Fig. 1.1 is directed along the y-axis, making it unclear 
+how to align the magnet in the y-direction and measure a deﬂection. In our depiction and discussion of 
+Stern-Gerlach experiments, we ignore this technical complication.
+In the SPINS program, as in real Stern-Gerlach experiments, the numbers of atoms detected 
+in particular states can be predicted by probability rules that we will discuss later. To simplify 
+our schematic depictions of Stern-Gerlach experiments, the numbers shown for detected atoms 
+are those obtained by using the calculated probabilities without any regard to possible statistical 
+uncertainties. That is, if the theoretically predicted probabilities of two measurement possibilities 
+are each 50%, then our schematics will display equal numbers for those two possibilities, whereas 
+in a real experiment, statistical uncertainties might yield a 55% >45% split in one experiment and 
+a 47% >53% split in another, etc. The SPINS program simulations are designed to give statistical 
+uncertainties, so you will need to perform enough experiments to convince yourself that you have a 
+sufﬁciently good estimate of the probability (see SPINS Lab 1 for more information on statistics).
+Now let’s consider a series of simple Stern-Gerlach experiments with slight variations that help to 
+illustrate the main features of quantum mechanics. We ﬁrst describe the experiments and their results 
+and draw some qualitative conclusions about the nature of quantum mechanics. Then we introduce the 
+formal mathematics of the ket notation and show how it can be used to predict the results of each of 
+the experiments.
+1.1.1 /H17039 Experiment 1
+The ﬁrst experiment is shown in Fig. 1.3 and consists of a source of atoms, two Stern-Gerlach ana-
+lyzers both aligned along the z-axis, and counters for the output ports of the analyzers. The atomic 
+beam coming into the ﬁrst Stern-Gerlach analyzer is split into two beams at the output, just like the 
+original experiment. Now instead of counting the atoms in the upper output beam, the spin compo-
+nent is measured again by directing those atoms into the second Stern-Gerlach analyzer. The result of 
+this experiment is that no atoms are ever detected coming out of the lower output port of the second 
+Stern-Gerlach analyzer. All atoms that are output from the upper port of the ﬁrst analyzer also pass 
+
+6 Stern-Gerlach Experiments
+through the upper port of the second analyzer. Thus we say that when the ﬁrst Stern-Gerlach analyzer 
+measures an atom to have a z-component of spin Sz = +U>2, then the second analyzer also measures 
+Sz = +U>2 for that atom. This result is not surprising, but it sets the stage for results of experiments 
+to follow.
+Though both Stern-Gerlach analyzers in Experiment 1 are identical, they play different roles in 
+this experiment. The ﬁrst analyzer prepares the beam in a particular quantum state 10 +92 and the 
+second analyzer measures the resultant beam, so we often refer to the ﬁrst analyzer as a state prepa-
+ration device. By preparing the state with the ﬁrst analyzer, the details of the source of atoms can be 
+ignored. Thus our main focus in Experiment 1 is what happens at the second analyzer because we 
+know that any atom entering the second analyzer is represented by the 0 +9 ket prepared by the ﬁrst 
+analyzer. All the experiments we will describe employ a ﬁrst analyzer as a state preparation device, 
+though the SPINS program has a feature where the state of the atoms coming from the oven is deter-
+mined but unknown, and the user can perform experiments to determine the unknown state using only 
+one analyzer in the experiment.
+1.1.2 /H17039 Experiment 2
+The second experiment is shown in Fig. 1.4 and is identical to Experiment 1 except that the sec-
+ond Stern-Gerlach analyzer has been rotated by 90° to be aligned with the x-axis. Now the second 
+analyzer measures the spin component along the x-axis rather the z-axis. Atoms input to the second 
+analyzer are still represented by the ket 0 +9 because the ﬁrst analyzer is unchanged. The result of this 
+experiment is that atoms appear at both possible output ports of the second analyzer. Atoms leaving 
+the upper port of the second analyzer have been measured to have Sx = +U>2, and atoms leaving 
+ZZ
+50
+50
+0
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1
+/LBracketBar1Ψ/RAngleBracket1
+FIGURE 1.3 Experiment 1 measures the spin component along the z-axis twice in succession.
+XZ
+50
+25
+25/LBracketBar1/Minus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1x
+/LBracketBar1/Plus/RAngleBracket1x
+/LBracketBar1/Plus/RAngleBracket1/LBracketBar1Ψ/RAngleBracket1
+FIGURE 1.4 Experiment 2 measures the spin component along the z-axis and then along the x-axis.
+
+1.1 Stern-Gerlach Experiment 7
+the lower port have Sx = -U>2. On average, each of these ports has 50% of the atoms that left the 
+upper port of the ﬁrst analyzer. As shown in Fig. 1.4, the output states of the second analyzer have 
+new labels 
+0 +9x and 0 -9x, where the x subscript denotes that the spin component has been measured 
+along the x-axis. We assume that if no subscript is present on the quantum ket 1e.g., 0 +92, then the 
+spin component is along the z-axis. This use of the z-axis as the default is a common convention 
+throughout our work and also in much of physics.
+A few items are noteworthy about this experiment. First, we notice that there are still only two 
+possible outputs of the second Stern-Gerlach analyzer. The fact that it is aligned along a different axis 
+doesn’t affect the fact that we get only two possible results for the case of a spin-1/2 particle. Second, 
+it turns out that the results of this experiment would be unchanged if we used the lower port of the ﬁrst 
+analyzer. That is, atoms entering the second analyzer in state 
+0 -9 would also result in half the atoms 
+in each of the 0{9x output ports. Finally, we cannot predict which of the second analyzer output ports 
+any particular atom will come out. This can be demonstrated in actual experiments by recording the 
+individual counts out of each port. The arrival sequences at any counter are completely random. We 
+can say only that there is a 50% probability that an atom from the second analyzer will exit the upper 
+analyzer port and a 50% probability that it will exit the lower port. The random arrival of atoms at the 
+detectors can be seen clearly in the SPINS program simulations.
+This probabilistic nature is at the heart of quantum mechanics. One might be tempted to say that 
+we just don’t know enough about the system to predict which port the atom will exit. That is to say, 
+there may be some other variables, of which we are ignorant, that would allow us to predict the results. 
+Such a viewpoint is known as a local hidden variable theory. John Bell proved that such theories are 
+not compatible with the experimental results of quantum mechanics. The conclusion to draw from this 
+is that even though quantum mechanics is a probabilistic theory, it is a complete description of reality. 
+We will have more to say about this in Chapter 4.
+Note that the 50% probability referred to above is the probability that an atom input to the second 
+analyzer exits one particular output port. It is not the probability for an atom to pass through the whole sys-
+tem of Stern-Gerlach analyzers. It turns out that the results of this experiment (the 50>50 split at the sec-
+ond analyzer) are the same for any combination of two orthogonal axes of the ﬁrst and second analyzers.
+1.1.3 /H17039 Experiment 3
+Experiment 3, shown in Fig. 1.5, extends Experiment 2 by adding a third Stern-Gerlach analyzer aligned 
+along the z-axis. Atoms entering the third analyzer have been measured by the ﬁrst Stern-Gerlach 
+analyzer to have spin component up along the z-axis, and by the second analyzer to have spin component 
+up along the x-axis. The third analyzer then measures how many atoms have spin component up or down 
+125
+125
+500
+XZ Z
+250
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1/LBracketBar1/Minus/RAngleBracket1
+/LBracketBar1Ψ/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1x
+/LBracketBar1/Plus/RAngleBracket1x
+FIGURE 1.5 Experiment 3 measures the spin component three times in succession.
+
+8 Stern-Gerlach Experiments
+along the z-axis. Classically, one would expect that the ﬁnal measurement would yield the result spin 
+up along the z-axis, because that was measured at the ﬁrst analyzer. That is to say: classically the ﬁrst 
+two analyzers tell us that the atoms have Sz = +U>2 and Sx = +U>2, so the third measurement must 
+yield Sz = +U>2. But that doesn’t happen, as Erwin learned with his quantum socks in the Prologue. 
+The quantum mechanical result is that the atoms are split with 50% probability into each output port at 
+the third analyzer. Thus the last two analyzers behave like the two analyzers of Experiment 2 (except 
+with the order reversed), and the fact that there was an initial measurement that yielded S
+z = +U>2 is 
+somehow forgotten or erased.
+This result demonstrates another key feature of quantum mechanics: a measurement disturbs the 
+system. The second analyzer has disturbed the system such that the spin component along the z-axis 
+does not have a unique value, even though we measured it with the ﬁrst analyzer. Erwin saw this 
+when he sorted, or measured, his socks by color and then by length. When he looked, or measured, 
+a third time, he found that the color he had measured originally was now random—the socks had 
+forgotten about the ﬁrst measurement. One might ask: Can I be more clever in designing the experi-
+ment such that I don’t disturb the system? The short answer is no. There is a fundamental incompat-
+ibility in trying to measure the spin component of the atom along two different directions. So we say 
+that S
+x and Sz are incompatible observables. We cannot know the measured values of both simul-
+taneously. The state of the system can be represented by the ket 0 +9= 0Sz = +U>29 or by the ket 
+0 +9x = 0Sx = +U>29, but it cannot be represented by a ket 0Sz = +U>2, Sx = +U>29 that speciﬁes 
+values of both components. Having said this, it should be said that not all pairs of quantum mechanical 
+observables are incompatible. It is possible to do some experiments without disturbing some of the 
+other aspects of the system. We will see in Section 2.4 that whether two observables are compatible or 
+not is very important in how we analyze a quantum mechanical system.
+Not being able to measure both the S
+z and Sx spin components is clearly distinct from the classi-
+cal case where we can measure all three components of the spin vector, which tells us which direction 
+the spin is pointing. In quantum mechanics, the incompatibility of the spin components means that we 
+cannot know which direction the spin is pointing. So when we say “the spin is up,” we really mean 
+only that the spin component along that one axis is up (vs. down). The quantum mechanical spin vec-
+tor cannot be said to be pointing in any given direction. As is often the case, we must check our classi-
+cal intuition at the door of quantum mechanics.
+1.1.4 /H17039 Experiment 4
+Experiment 4 is depicted in Fig. 1.6 and is a slight variation on Experiment 3. Before we get into the 
+details, note a few changes in the schematic drawings. As promised, we have dropped the ket labels on 
+the beams because they are redundant. We have deleted the counters on all but the last analyzer and 
+instead simply blocked the unwanted beams and given the average number of atoms passing from one 
+analyzer to the next. The beam blocks are shown explicitly in Fig. 1.6 but will not be shown after this to 
+be consistent with the SPINS program. Note also that in Experiment 4c two output beams are combined 
+as input to the following analyzer. This is simple in principle and in the SPINS program but can be 
+difﬁcult in practice. The recombination of the beams must be done properly so as to avoid “disturbing” 
+the beams. If you care to read more about this problem, see Feynman’s Lectures on Physics, volume 3. 
+We will have more to say about the “disturbance” later in Section 2.2. For now we simply assume that 
+the beams can be recombined in the proper manner.
+Experiment 4a is identical to Experiment 3. In Experiment 4b, the upper beam of the second ana-
+lyzer is blocked and the lower beam is sent to the third analyzer. In Experiment 4c, both beams are 
+combined with our new method and sent to the third analyzer. It should be clear from our previous 
+experiments that Experiment 4b has the same results as Experiment 4a. We now ask about the results of 
+
+1.1 Stern-Gerlach Experiment 9
+Experiment 4c. If we were to use classical probability analysis, then Experiment 4a would indicate that 
+the probability for an atom leaving the ﬁrst analyzer to take the upper path through the second analyzer 
+and then exit through the upper port of the third analyzer is 25%, where we are now referring to the total 
+probability for those two steps. Likewise, Experiment 4b would indicate that the total probability to 
+take the lower path through the second  analyzer and exit through the upper port of the third analyzer is 
+also 25%. Hence the total probability to exit from the upper port of the third analyzer when both paths 
+are available, which is Experiment 4c, would be 50%, and likewise for the exit from the lower port.
+However, the quantum mechanical result in Experiment 4c is that all the atoms exit the upper 
+port of the third analyzer and none exits the lower port. The atoms now appear to “remember” that 
+they were initially measured to have spin up along the z-axis. By combining the two beams from 
+the second analyzer, we have avoided the quantum mechanical disturbance that was evident in 
+Experiments 3, 4a, and 4b. The result is now the same as Experiment 1, which means it is as if the 
+second analyzer is not there.
+To see how odd this is, look carefully at what happens at the lower port of the third analyzer. In 
+this discussion, we refer to percentages of atoms leaving the ﬁrst analyzer, because that analyzer is 
+the same in all three experiments. In Experiments 4a and 4b, 50% of the atoms are blocked after the 
+middle analyzer and 25% of the atoms exit the lower port of the third analyzer. In Experiment 4c, 
+100% of the atoms pass from the second analyzer to the third analyzer, yet fewer atoms come out 
+of the lower port. In fact, no atoms make it through the lower port! So we have a situation where 
+25
+25
+XZ Z
+100 50
+25
+25
+XZ Z
+100
+(a)
+(b)
+(c)
+50
+100
+0
+XZ Z
+100 100
+FIGURE 1.6 Experiment 4 measures the spin component three times in succession 
+and uses (a and b) one or (c) two beams from the second analyzer.
+
+10 Stern-Gerlach Experiments
+allowing more ways or paths to reach a counter results in fewer counts. Classical probability theory 
+cannot explain this aspect of quantum mechanics. It is as if you opened a second window in a room to 
+get more sunlight and the room went dark!
+However, you may already know of a way to explain this effect. Imagine a procedure whereby 
+combining two effects leads to cancellation rather than enhancement. The concept of wave interfer-
+ence, especially in optics, comes to mind. In the Young’s double-slit experiment, light waves pass 
+through two narrow slits and create an interference pattern on a distant screen, as shown in Fig. 1.7. 
+Either slit by itself produces a nearly uniform illumination of the screen, but the two slits combined 
+produce bright and dark interference fringes, as shown in Fig. 1.7(b). We explain this by adding 
+together the electric ﬁeld vectors of the light from the two slits, then squaring the resultant vector to 
+ﬁnd the light intensity. We say that we add the amplitudes and then square the total amplitude to ﬁnd 
+the resultant intensity. See Section 6.6 or an optics textbook for more details about this experiment.
+We follow a similar prescription in quantum mechanics. We add together amplitudes and then 
+take the square to ﬁnd the resultant probability, which opens the door to interference effects. Before 
+we discuss quantum mechanical interference, we must explain what we mean by an amplitude in 
+quantum mechanics and how we calculate it.
+1.2 /H17039 QUANTUM STATE VECTORS
+Postulate 1 of quantum mechanics stipulates that kets are to be used for a mathematical description of a 
+quantum mechanical system. These kets are abstract entities that obey many of the rules you know about 
+ordinary spatial vectors. Hence they are called quantum state vectors. As we will show in Example 1.3, 
+these vectors must employ complex numbers in order to properly describe quantum mechanical systems. 
+Quantum state vectors are part of a vector space that we call a Hilbert space. The dimensionality of 
+the Hilbert space is determined by the physics of the system at hand. In the Stern-Gerlach example, 
+the two possible results for a spin  component measurement dictate that the vector space has only two 
+Pinhole
+Source
+Double
+Slit
+(a) (b)
+Screen Single Slit
+Patterns
+Double Slit
+Pattern
+FIGURE 1.7 (a) Young’s double-slit interference experiment and (b) resultant intensity patterns 
+observed on the screen, demonstrating single-slit diffraction and double-slit interference.
+
+1.2 Quantum State Vectors 11
+dimensions. That makes this problem mathematically as simple as it can be, which is why we have chosen 
+to study it. Because the quantum state vectors are abstract, it is hard to say much about what they are, 
+other than how they behave mathematically and how they lead to physical predictions.
+In the two-dimensional vector space of a spin-1/2 system, the two kets 0{9 form a basis, just like 
+the unit vectors in  , jn , and kn form a basis for describing vectors in three-dimensional space. However, 
+the analogy we want to make with these spatial vectors is only mathematical, not physical. The spatial 
+unit vectors have three important mathematical properties that are characteristic of a basis: the basis 
+vectors i
+n  , jn , and kn are normalized, orthogonal, and complete. Spatial vectors are normalized if their 
+magnitudes are unity, and they are orthogonal if they are geometrically perpendicular to each other. 
+The basis is complete if any general vector in the space can be written as a linear superposition of the 
+basis vectors. These properties of spatial basis vectors can be summarized as follows:
+  in~in = jn~jn = kn ~kn = 1   normalization
+  in~jn = in~kn = jn~kn = 0   orthogonality  (1.9)
+  A = axin + ay jn + azkn    completeness,
+where A is a general vector. Note that the dot product, also called the scalar product, is central to the 
+description of these properties.
+Continuing the mathematical analogy between spatial vectors and abstract vectors, we require that 
+these same properties (at least conceptually) apply to quantum mechanical basis vectors. For the Sz 
+measurement, there are only two possible results, corresponding to the states 0 +9 and 0 -9, so these 
+two states comprise a complete set of basis vectors. This basis is known as the Sz basis. We focus on 
+this basis for now and refer to other possible basis sets later. The completeness of the basis kets 0{9 
+implies that a general quantum state vector 0 c9 is a linear combination of the two basis kets:
+ 0 c9= a 0 +9+ b 0 -9, (1.10)
+where a and b are complex scalar numbers multiplying each ket. This addition of two kets yields 
+another ket in the same abstract space. The complex scalar can appear either before or after the ket 
+without affecting the mathematical properties of the ket 1i.e., a 0 +9= 0 +9a2. It is customary to use 
+the Greek letter c (psi) for a general quantum state. You may have seen c1x2 used before as a quan-
+tum mechanical wave function. However, the state vector or ket 0 c9 is not a wave function. Kets do 
+not have any spatial dependence as wave functions do. We will study wave functions in Chapter 5.
+To discuss orthogonality and normalization (known together as orthonormality) we must ﬁrst 
+deﬁne scalar products as they apply to these new kets. As we said above, the machinery of quantum 
+mechanics requires the use of complex numbers. You may have seen other ﬁelds of physics use com-
+plex numbers. For example, sinusoidal oscillations can be described using the complex exponential 
+eivt rather than cos(vt). However, in such cases, the complex numbers are not required, but are rather 
+a convenience to make the mathematics easier. When using complex notation to describe classical 
+vectors like electric and magnetic ﬁelds, the deﬁnition of the dot product is generalized slightly, such 
+that one of the vectors is complex conjugated. A similar approach is taken in quantum mechanics. The 
+analog to the complex conjugated vector of classical physics is called a bra in the Dirac notation of 
+quantum mechanics. Thus corresponding to a general ket 0 c9, there is a bra, or bra vector, which is 
+written as 8c 0. If a general ket 0 c9 is speciﬁed as 0 c9= a 0 +9+ b 0 -9, then the corresponding bra 
+8c 0 is deﬁned as
+ 8c 0 = a*8+ 0 + b*8- 0 , (1.11)
+
+12 Stern-Gerlach Experiments
+where the basis bras 8 + 0 and 8 - 0 correspond to the basis kets 0 +9 and 0 -9, respectively, and the 
+coefﬁcients a and b have been complex conjugated.
+The scalar product in quantum mechanics is deﬁned as the product of a bra and a ket taken in the 
+proper order—bra ﬁrst, then ket second:
+ 18bra 0210ket92. (1.12)
+When the bra and ket are combined together in this manner, we get a bracket (bra ket)—a little physics 
+humor—that is written in shorthand as
+ 8bra 0ket9. (1.13)
+Thus, given the basis kets 0 +9 and 0 -9, one inner product, for example, is written as
+ 18 + 0210 - 92= 8 + 0 - 9 (1.14)
+and so on. Note that we have eliminated the extra vertical bar in the middle. The scalar product in 
+quantum mechanics is generally referred to as an inner product or a projection.
+So how do we calculate the inner product 8+ 0 +9? We do it the same way we calculate the dot 
+product in ~in . We deﬁne it to be unity because we like basis vectors to be unit vectors. There is a little 
+more to it than that, because in quantum mechanics (as we will see shortly) using normalized basis 
+vectors is more rooted in physics than in our personal preferences for mathematical cleanliness. But 
+for all practical purposes, if someone presents a set of basis vectors to you, you can probably assume 
+that they are normalized. So the normalization of the spin-1/2 basis vectors is expressed in this new 
+notation as 8+ 0 +9= 1 and 8- 0 -9= 1.
+Now, what about orthogonality? The spatial unit vectors in, jn, and kn  used for spatial vectors are 
+orthogonal to each other because they are at 90° with respect to each other. That orthogonality is 
+expressed mathematically in the dot products in~jn = in~kn = jn~kn = 0. For the spin basis kets 0 +9 and 
+0 -9, there is no spatial geometry involved. Rather, the spin basis kets 0 +9 and 0 -9 are orthogonal in 
+the mathematical sense, which we express with the inner product as 8+ 0 -9= 0. Again, we do not 
+prove to you that these basis vectors are orthogonal, but we assume that a well-behaved basis set obeys 
+orthogonality. Though there is no geometry in this property for quantum mechanical basis vectors, 
+the fundamental idea of orthogonality is the same, so we use the same language—if a general vector 
+“points” in the direction of a basis vector, then there is no component in the “direction” of the other 
+unit vectors.
+In summary, the properties of normalization, orthogonality, and completeness can be expressed 
+in the case of a two-state spin-1/2 quantum system as:
+ 8+ 0 +9= 1
+8- 0 -9= 1 r    normalization  
+ 8+ 0 -9= 0
+8- 0 +9= 0 r    orthogonality   
+(1.15)
+ 0 c9= a 0 +9+ b 0 -9    completeness    . 
+Note that a product of kets 1e.g., 0 +90 +92 or a similar product of bras 1e.g., 8 + 08 + 02 is meaningless 
+in this new notation, while a product of a ket and a bra in the “wrong” order 1e.g., 0 + 98 + 02 has a 
+meaning that we will deﬁne in Section 2.2.3. Equations (1.15) are sufﬁcient to deﬁne how the basis 
+
+1.2 Quantum State Vectors 13
+kets behave mathematically. Note that the inner product is deﬁned using a bra and a ket, though it is 
+common to refer to the inner product of two kets, where it is understood that one is converted to a bra 
+ﬁrst. The order does matter, as we will see shortly.
+Using this new notation, we can learn a little more about general quantum states and derive some 
+expressions that will be useful later. Consider the general state vector 0 c9= a 0 +9+ b 0 -9. Take the 
+inner product of this ket with the bra 8 + 0 and obtain
+  8 + 0 c9= 8 + 0 1a 0 +9+ b 0 -92 
+  = 8 + 0a 0 +9+ 8 + 0b 0 -9 (1.16)
+  = a 8 + 0 +9+ b8 + 0 -9  
+  = a , 
+using the properties that inner products are distributive and that scalars can be moved freely through 
+bras or kets. Likewise, you can show that 8- 0c9= b. Hence the coefﬁcients multiplying the basis 
+kets are simply the inner products or projections of the general state 0c9 along each basis ket, albeit in 
+an abstract complex vector space rather than the concrete three-dimensional space of normal vectors. 
+Using these results, we rewrite the general state as
+  0 c9= a 0 +9+ b 0 -9  
+  = 0 +9a + 0 -9b  (1.17)
+  = 0 +958 + 0 c96 + 0 -958 - 0 c96, 
+where the rearrangement of the second equation again uses the property that scalars 1e.g., a = 8 + 0 c92 
+can be moved through bras or kets.
+For a general state vector 0 c9= a 0 +9+ b 0 -9, we deﬁned the corresponding bra to be 
+8c 0 = a*8 + 0 +b*8 - 0. Thus, the inner product of the state 0 c9 with the basis ket 0 +9 taken in the 
+reverse order compared to Eq. (1.16) yields
+  8c 0 + 9= 8 + 0a* 0 +9+ 8 - 0b* 0 +9 
+  = a*8 + 0 + 9+ b*8 - 0 +9 
+  = a*.  
+(1.18)
+Thus, we see that an inner product with the states reversed results in a complex conjugation of the 
+inner product:
+ 8 + 0 c 9= 8c 0 +9*. (1.19)
+This important property holds for any inner product. For example, the inner product of two general 
+states is
+ 8f0 c9= 8c 0f 9*  . (1.20)
+Now we come to a new mathematical aspect of quantum vectors that differs from the use of vec-
+tors in classical mechanics. The rules of quantum mechanics (postulate 1) require that all state vectors 
+describing a quantum system be normalized, not just the basis kets. This is clearly different from 
+ordinary spatial vectors, where the length or magnitude of a vector means something and only the unit 
+vectors i
+n, jn, and kn  are normalized to unity. This new rule means that in the quantum mechanical state 
+
+14 Stern-Gerlach Experiments
+space only the direction—in an abstract sense—is important. If we apply this normalization require-
+ment to a general state 0 c9, then we obtain
+ 8c 0 c9= 5a*8 + 0 + b*8- 065a 0 +9+ b 0 -96 = 1 
+  1 a*a 8+ 0 +9+ a*b 8+ 0 -9+ b*a 8 - 0 +9+ b*b 8 - 0 -9= 1
+  1 a*a + b*b = 1  
+(1.21)
+  1 0a 0
+2
++ 0b 0
+2
+= 1 ,
+or using the expressions for the coefﬁcients obtained above,
+ 08 + 0 c90
+2
++ 08 - 0 c90
+2
+= 1. (1.22)
+Example 1.1 Normalize the vector 0 c9= C11 0 +9+ 2i 0 -92. The complex constant C is often 
+referred to as the normalization constant.
+To normalize 0 c9, we set the inner product of the vector with itself equal to unity and then 
+solve for C—note the requisite complex conjugations
+  1 = 8c 0 c9  
+  = C*518 + 0 - 2i8- 06C51 0 +9+ 2i 0 - 96  
+  = C*C518 + 0 +9+ 2i8 + 0 -9- 2i8- 0 +9+ 48 - 0 -96 (1.23)
+  = 5 0C 0
+2
+ 
+  1 0C 0 = 1
+25
+ . 
+The overall phase of the normalization constant is not physically meaningful (Problem 1.3), so 
+we follow the standard convention and choose it to be real and positive. This yields C = 1>15. 
+The normalized quantum state vector is then
+ 0 c9= 1
+25
+ 11 0 +9+ 2i 0 -92. (1.24)
+Now comes the crucial element of quantum mechanics.  We postulate that each term in the sum 
+of Eq. (1.22) is equal to the probability that the quantum state described by the ket 0 c9 is measured 
+to be in the corresponding basis state. Thus
+ PSz = + U>2 = 08+ 0 c90
+2
+ (1.25)
+is the probability that the state 0 c9 is found to be in the state 0 +9 when a measurement of Sz is made, 
+meaning that the result Sz = +U>2 is obtained. Likewise,
+ PSz = - U>2 = 08- 0 c90
+2
+ (1.26)
+is the probability that the measurement yields the result Sz = -U>2. The subscript on the probability 
+indicates the measured value. For the spin component measurements, we will usually abbreviate this 
+to, for example, P
++  for an Sz = +U>2 result or P- y for an Sy = -U>2 measurement.
+
+1.2 Quantum State Vectors 15
+We now have a prescription for predicting the outcomes of the experiments we have been dis-
+cussing. For example, the experiment shown in Fig. 1.8 has the state 0 c9= 0 +9 prepared by the 
+ﬁrst Stern-Gerlach device and then input to the second Stern-Gerlach device aligned along the z-axis. 
+Therefore the probabilities of measuring the input state 0 c9= 0 +9 to have the two output values are 
+as shown. Because the spin-1/2 system has only two possible measurement results, these two prob-
+abilities must sum to unity—there is a 100% probability of recording some value in the experiment. 
+This basic rule of probabilities is why the rules of quantum mechanics require that all state vectors 
+be properly normalized before they are used in any calculation of probabilities. The experimental 
+predictions shown in Fig. 1.8 are an example of the fourth postulate of quantum mechanics, which is 
+presented below.
+50
+0
+P/Plus/Space/Equal/Space/LBracketBar1/LAngleBracket1/Plus/LBracketBar1/Plus/RAngleBracket1/LBracketBar12 /Equal/Space1
+P/Minus/Space/Equal/Space/LBracketBar1/LAngleBracket1/Minus/LBracketBar1/Plus/RAngleBracket1/LBracketBar12 /Equal/Space0
+ZZ
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1
+FIGURE 1.8 Probabilities of spin component measurements.
+Postulate 4 (Spin-1/2 system)
+The probability of obtaining the value {U>2 in a measurement of the observ-
+able Sz on a system in the state 0 c9 is
+P{ = 08{ 0 c90
+2
+,
+where 0{9 is the basis ket of Sz corresponding to the result {U>2.
+This is labeled as the fourth postulate because we have written this postulate using the language of the 
+spin-1/2 system, while the general statement of the fourth postulate presented in Section 1.5 requires 
+the second and third postulates of Section 2.1. A general spin component measurement is shown in 
+Fig. 1.9, along with a histogram that compactly summarizes the measurement results.
+Because the quantum mechanical probability is found by squaring an inner product, we refer to 
+an inner product, 8+ 0 c9 for example, as a probability amplitude or sometimes just an amplitude; 
+much like a classical wave intensity is found by squaring the wave amplitude. Note that the conven-
+tion is to put the input or initial state on the right and the output or ﬁnal state on the left: 8out 0in9, so 
+one would read from right to left in describing a problem. Because the probability involves the com-
+plex square of the amplitude, and 8out 0in9= 8in 0out9*, this convention is not critical for calculat-
+ing probabilities. Nonetheless, it is the accepted practice and is important in situations where several 
+amplitudes are combined.
+Armed with these new quantum mechanical rules and tools, let’s continue to analyze the experi-
+ments discussed earlier. Using the experimental results and the new rules we have introduced, we can 
+learn more about the mathematical behavior of the kets and the relationships among them. We will 
+focus on the ﬁrst two experiments for now and return to the others in the next chapter.
+
+16 Stern-Gerlach Experiments
+1.2.1 /H17039 Analysis of Experiment 1
+In Experiment 1, the ﬁrst Stern-Gerlach analyzer prepared the system in the 0 +9 state and the sec-
+ond analyzer later measured this state to be in the 0 +9 state and not in the 0 -9 state. The results of 
+the experiment are summarized in the histogram in Fig. 1.10. We can use the fourth postulate to pre-
+dict the results of this experiment. We take the inner product of the input state 0 +9 with each of the 
+possible output basis states 0 +9 and 0 -9. Because we know that the basis states are normalized and 
+orthogonal, we calculate the probabilities to be
+ P+ = 08+ 0 +90
+2
+= 1 
+ P- = 08 - 0 +90
+2
+= 0 .  
+(1.27)
+These predictions agree exactly with the histogram of experimental results shown in Fig. 1.10. A 0 +9 
+state is always measured to have Sz = +U>2.
+1.2.2 /H17039 Analysis of Experiment 2
+In Experiment 2, the ﬁrst Stern-Gerlach analyzer prepared the system in the 0 +9 state and the sec-
+ond analyzer performed a measurement of the spin component along the x-axis, ﬁnding 50% prob-
+abilities for each of the two possible states 0 +9x and 0 -9x, as shown in the histogram in Fig. 1.11(a). 
+For this experiment, we cannot predict the results of the measurements, because we do not yet have 
+/LBracketBar1Ψ/RAngleBracket1
+Z
+P/Plus/Space/Equal/Space/LBracketBar1/LAngleBracket1/Plus/LBracketBar1Ψ/RAngleBracket1/LBracketBar12
+P/Minus/Space/Equal/Space/LBracketBar1/LAngleBracket1/Minus/LBracketBar1Ψ/RAngleBracket1/LBracketBar12
+(a) (b)
+Sz
+1
+P
+P/Minus
+P/Plus
+/Minus/HBar
+2
+/HBar
+2
+/LBracketBar1/Plus/RAngleBracket1
+/LBracketBar1/Minus/RAngleBracket1
+FIGURE 1.9 (a) Spin component measurement for a general input state and 
+(b) histogram of measurement results.
+1
+P
+P/Minus
+P/Plus/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/LBracketBar1/Plus/RAngleBracket1
+Sz
+/Minus/HBar
+2
+/HBar
+2
+FIGURE 1.10 Histogram of Sz spin component measurements 
+for Experiment 1 with 0cin9 = 0 + 9.
+
+1.2 Quantum State Vectors 17
+enough information about how the states 0 +9x and 0 -9x behave mathematically. Rather, we will use 
+the results of the experiment to determine these states. Recalling that the experimental results would 
+be the same if the ﬁrst analyzer prepared the system to be in the 
+0 -9 state [see Fig. 1.11(b)], we have 
+four results for the two experiments:
+ P1, + x = 0x8+ 0 +90
+2
+= 1
+2  
+ P1, - x = 0x8 - 0 +90
+2
+= 1
+2  
+ P2, + x = 0x8+ 0 -90
+2
+= 1
+2   
+(1.28)
+ P2, - x = 0x8 - 0 -90
+2
+= 1
+2 . 
+Because the kets 0 +9 and 0 -9 form a complete basis, the kets describing the Sx measurement, 0 +9x 
+and 0 -9x, can be written in terms of them. We do not yet know the speciﬁc coefﬁcients of the 0{9x 
+states, so we use general expressions
+ 0 +9x = a 0 +9+ b 0 -9 
+ 0 -9x = c 0 +9+ d 0 -9, 
+(1.29)
+and now our task is to use the results of Experiment 2 to determine the coefﬁcients a, b, c, and d. The 
+ﬁrst measured probability in Eq. (1.28) is
+ P1, + x = 0x8+ 0 +90
+2
+= 1
+2 . (1.30)
+Using the general expression for 0 +9x in Eq. (1.29), we calculate the probability that the 0 +9 input 
+state is measured to be in the 0 +9x output state, that is, to have Sx = +U>2:
+  P1, + x = 0x8+ 0 +90
+2
+ 
+  = 05a*8 + 0 + b*8 - 060  +90
+2
+  (1.31)
+  = 0a* 0
+2
+= 0a 0
+2 , 
+where we convert the 0 +9x ket to a bra x8 + 0 in order to calculate the inner product. Equating the 
+experimental result in Eq. (1.30) and the prediction in Eq. (1.31), we ﬁnd
+ 0a 0
+2
+= 1
+2 . (1.32)
+(a)
+P/Minusx
+1
+P
+Sx
+(b)
+P/PlusxP/Minusx
+1
+P
+Sx
+/Minus/HBar
+2
+/HBar
+2 /Minus/HBar
+2
+/HBar
+2
+P/Plusx
+/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/LBracketBar1/Minus/RAngleBracket1/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/LBracketBar1/Plus/RAngleBracket1
+FIGURE 1.11 Histograms of Sx spin component measurements for Experiment 2 
+for different input states (a) 0cin9 = 0 + 9 and (b) 0cin9 = 0 -9.
+
+18 Stern-Gerlach Experiments
+Similarly, one can calculate the other three probabilities to arrive at 0b 0
+2
+= 0c 0
+2
+= 0d 0
+2
+= 1
+2 . (Prob-
+lem 1.4) Because each coefﬁcient is complex, each has an amplitude and phase. However, the overall 
+phase of a quantum state vector is not physically meaningful (see Problem 1.3). Only the relative 
+phase between different components of the state vector is physically measurable. Hence, we are free to 
+choose one coefﬁcient of each vector to be real and positive without any loss of generality. This allows 
+us to write the desired states as
+  
+0 +9x = 1
+12 30 +9+ eia0 -94  
+  0 -9x = 1
+12 30 +9+ eib0 -94,
+  (1.33)
+where a and b are relative phases that we have yet to determine. Note that these states are already nor-
+malized because we used all of the experimental results, which reﬂect the fact that the probability for 
+all possible results of an experiment must sum to unity.
+We have used all the experimental results from Experiment 2, but the 0{9x kets are still not deter-
+mined. We need some more information. If we perform Experiment 1 with both analyzers aligned 
+along the x-axis, the results will be as you expect—all 0 +9x states from the ﬁrst analyzer will be mea-
+sured to have Sx = +U>2 at the second analyzer, that is, all atoms exit in the 0 +9x state and none in the 
+0 -9x . The probability calculations for this experiment are
+ P+ x = 0x8+ 0 +9x 0
+2
+= 1 
+ P- x = 0x8 - 0 +9x 0
+2
+= 0,  
+(1.34)
+which tell us mathematically that the 0{9x states are orthonormal to each other, just like the 0{9 
+states. This also implies that the 0{9x kets form a basis, the Sx basis, which you might expect because 
+they correspond to the distinct results of a different spin component measurement. The general expres-
+sions we used for the 0{9x kets are already normalized but are not yet orthogonal. That is the new 
+piece of information we need. The orthogonality condition leads to
+ x8 - 0 +9x = 0 
+ 1
+12 38+ 0 + e- ib8 - 041
+12 30+9+ eia0 -94= 0 
+ 1
+2 31 + ei1a- b24= 0  (1.35)
+ ei1a- b2 = -1 
+ eia = -eib, 
+where the complex conjugation of the second coefﬁcient of the x8 - 0 bra should be noted.
+We now have an equation relating the remaining coefﬁcients a and b, but we need some more 
+information to determine their values. Unfortunately, there is no more information to be obtained, so 
+we are free to choose the value of the phase a. This freedom comes from the fact that we have required 
+only that the x-axis be perpendicular to the z-axis, which limits the x-axis only to a plane rather than to 
+a unique direction. We follow convention here and choose the phase a /H11005 0. Thus we can express the 
+Sx basis kets in terms of the Sz basis kets as
+  0 +9x = 1
+12 30 +9+ 0 -94 
+  0 -9x = 1
+12 30 +9- 0 -94.  
+(1.36)
+
+1.2 Quantum State Vectors 19
+We generally use the Sz basis as the preferred basis for writing general states, but we could use 
+any basis we choose. If we were to use the Sx basis, then we could write the 0{9 kets as general states 
+in terms of the 0{9x kets. This can be done by solving Eq. (1.36) for the 0{9 kets, yielding
+  0 +9= 1
+12 30 +9x + 0 -9x4 
+  0 -9= 1
+12 30 +9x - 0 -9x4.  
+(1.37)
+With respect to the measurements performed in Experiment 2, Eq. (1.37) tells us that the 0 +9 
+state is a combination of the states 0 +9x and 0 -9x. The coefﬁcients tell us that there is a 50% probabil-
+ity for measuring the spin component to be up along the x-axis, and likewise for the down possibility, 
+which is in agreement with the histogram of measurements shown in Fig. 1.11(a). We must now take 
+a moment to describe carefully what a combination of states, such as in Eqs. (1.36) and (1.37), is and 
+what it is not.
+1.2.3 /H17039 Superposition States
+A general spin-1/2 state vector 0 c9 can be expressed as a combination of the basis kets 0 +9 and 0 -9
+ 0 c9= a 0 +9+ b 0 -9. (1.38)
+We refer to such a combination of states as a superposition state. To understand the importance of a 
+quantum mechanical superposition state, consider the particular state
+ 0 c9= 1
+12 10 +9+ 0 -92 (1.39)
+and measurements on this state, as shown in Fig. 1.12(a). Note that the state 0 c9 is none other 
+than the state 0 +9x that we found in Eq. (1.36), so we already know what the measurement results 
+are. If we measure the spin component along the x-axis for this state, then we record the result 
+Sx = +U>2 with 100% probability (Experiment 1 with both analyzers along the x-axis). If we mea-
+sure the spin component along the orthogonal z-axis, then we record the two results Sz = {U>2 
+with 50% probability each (Experiment 2 with the ﬁrst and second analyzers along the x- and 
+z-axes, respectively). Based upon this second set of results, one might be tempted to consider the 
+state 0 c9 as describing a beam that contains a mixture of atoms with 50% of the atoms in the 0 +9 
+state and 50% in the 0 -9 state. Such a state is called a mixed state  and is very different from a 
+superposition state.
+To clarify the difference between a mixed state and a superposition state, let’s carefully exam-
+ine the results of experiments on the proposed mixed-state beam, as shown in Fig. 1.12(b). If 
+we measure the spin component along the z-axis, then each atom in the 0 +9 state yields the result 
+Sz = +U>2 with 100% certainty and each atom in the 0 -9 state yields the result Sz = -U>2 with 
+100% certainty. The net result is that 50% of the atoms yield Sz = +U>2 and 50% yield Sz = -U>2. 
+This is exactly the same result as that obtained with all atoms in the 0 +9x state, as seen in Fig. 1.12(a). 
+If we instead measure the spin component along the x-axis, then each atom in the 0 +9 state yields the 
+two results Sx = {U>2 with 50% probability each (Experiment 2 with the ﬁrst and second analyzers 
+along the z- and x-axes, respectively). The atoms in the 0 -9 state yield the same results. The net result 
+is that 50% of the atoms yield Sx = +U>2 and 50% yield Sx = -U>2. This is in stark contrast to the 
+results of Experiment 1, which tell us that once we have prepared the state to be 0 +9x, then subsequent 
+measurements yield Sx = +U>2 with certainty, as seen in Fig. 1.12(a).
+
+20 Stern-Gerlach Experiments
+Hence we must conclude that the system described by the 0 c9= 0 +9x state is not a mixed 
+state with some atoms in the 0 +9 state and some in the 0 -9 state. Rather, each atom in the 0 +9x 
+beam is in a state that itself is a superposition of the 0 +9 and 0 -9 states. A superposition state is 
+often called a coherent superposition  because the relative phase of the two terms is important. For 
+example, if the input beam were in the 0 -9x state, then there would be a relative minus sign between 
+the two coefﬁcients, which would result in an Sx = -U>2 measurement but would not affect the Sz 
+measurement.
+Z
+50
+50
+/LBracketBar1Ψ/RAngleBracket1/Space/Equal/Space/LBracketBar1/Plus/RAngleBracket1x  /Equal/Space(/LBracketBar1/Plus/RAngleBracket1/Space/Plus/Space/LBracketBar1/Minus/RAngleBracket1)/Slash/Radical2
+X
+100
+0
+Z
+50
+50
+50% /LBracketBar1/Plus/RAngleBracket1
+50% /LBracketBar1/Minus/RAngleBracket1
+50% /LBracketBar1/Plus/RAngleBracket1
+50% /LBracketBar1/Minus/RAngleBracket1 X
+50
+50
+/LBracketBar1Ψ/RAngleBracket1/Space/Equal/Space/LBracketBar1/Plus/RAngleBracket1x /Equal/Space(/LBracketBar1/Plus/RAngleBracket1/Space/Plus/Space/LBracketBar1/Minus/RAngleBracket1)/Slash/Radical2
+(b)
+(a)
+FIGURE 1.12 (a) Superposition state measurements and (b) mixed state measurements.
+
+1.2 Quantum State Vectors 21
+We will not have any further need to speak of mixed states, so any combination of states we use 
+is a superposition state. Note that we cannot even write down a ket describing a mixed state. So if 
+ someone gives you a quantum state written as a ket, then it must be a superposition state and not a 
+mixed state. The random option in the SPINS program produces a mixed state, while the unknown 
+states are all superposition states.
+Example 1.2 Consider the input state
+ 0cin9= 3 0 +9+ 4 0 -9.  (1.40)
+Normalize this state vector and ﬁnd the probabilities of measuring the spin component along the 
+z-axis to be Sz = {U>2.
+To normalize this state, introduce an overall complex multiplicative factor and solve for this 
+factor by imposing the normalization condition:
+ 0cin9= C 33 0 +9+ 4 0 -94  
+ 8cin 0cin9= 1 
+ 5C* 338 + 0+ 48 - 0465C 33 0 +9+ 4 0 -946 = 1 
+(1.41) C*C 398 + 0 +9+ 128 + 0 -9+ 128 - 0 +9+ 168 - 0 -94 = 1 
+ C*C 3254= 1 
+ 0C 0
+2
+= 1
+25 . 
+Because an overall phase is physically meaningless, we choose C to be real and positive: C = 1>5. 
+Hence the normalized input state is
+ @cin9= 3
+5 @ + 9+ 4
+5 @ -9. (1.42)
+The probability of measuring Sz = +U>2 is
+  P+ = @8+ @cin9@
+2
+ 
+  = @8 + @33
+5 @ +9+ 4
+5 @ -94@
+2
+ (1.43)
+  = @3
+5 8 + @ +9+ 4
+5 8 + @ -9@
+2
+ 
+  = @3
+5 @
+2
+= 9
+25 . 
+The probability of measuring Sz = -U>2 is
+  P- = @8- @cin9@
+2
+ 
+  = @8- @33
+5 @ +9+ 4
+5 @ -94@
+2
+ 
+  = @3
+5 8- @ +9+ 4
+5 8- @ -9@
+2
+ 
+  = @4
+5 @
+2
+= 16
+25 . 
+(1.44)
+
+22 Stern-Gerlach Experiments
+Note that the two probabilities add to unity, which indicates that we normalized the input state 
+properly. A histogram of the predicted measurement results is shown in Fig. 1.13.
+ 1.3 /H17039 MATRIX NOTATION
+Up to this point, we have deﬁned kets mathematically in terms of their inner products with other kets. 
+Thus, in the general case we write a ket as
+ 0 c9= 8+ 0 c90 +9+ 8 - 0 c90 -9, (1.45)
+or in a speciﬁc case, we write
+  0 +9x = 8+ 0 +9x 0 +9+ 8 - 0 +9x 0 -9 
+  = 1
+12 0 +9+ 1
+12 0 -9.  
+(1.46)
+In both of these cases, we have chosen to write the kets in terms of the 0 +9 and 0 -9 basis kets. If we 
+agree on that choice of basis as a convention, then the two coefﬁcients 8+ 0 +9x and 8 - 0 +9x uniquely 
+specify the quantum state, and we can simplify the notation by using just those numbers. Thus, we 
+represent a ket as a column vector containing the two coefﬁcients that multiply each basis ket. For 
+example, we represent 0 +9x as
+ 0 +9x /H110391
+22
+ ¢1
+1≤ , (1.47)
+where we have used the new symbol /H11039to signify “is represented by,” and it is understood that we 
+are using the 0 +9 and 0 -9 basis or the Sz basis. We cannot say that the ket equals the column vector, 
+because the ket is an abstract vector in the state space and the column vector is just two complex num-
+bers. If we were to choose a different basis for representing the vector, then the complex coefﬁcients 
+would be different even though the vector is unchanged. We need to have a convention for the order-
+ing of the amplitudes in the column vector. The standard convention is to put the spin up amplitude 
+ﬁrst (at the top). Thus, the representation of the 0 -9x state in Eq. (1.36) is
+ 0 -9x /H110391
+22
+ ¢1
+-1≤ d 0 +9
+d 0 -9,  (1.48)
+1
+P
+Sz
+/Minus/HBar
+2
+/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/Space/Space/Space/Space/LBracketBar1/Plus/RAngleBracket1/Space/Plus/Space/Space/Space/Space/Space/LBracketBar1/Minus/RAngleBracket13
+5
+4
+5
+/HBar
+2
+P/Minus
+P/Plus
+FIGURE 1.13 Histogram of Sz spin component measurements.
+
+1.3 Matrix Notation 23
+where we have explicitly labeled the rows according to their corresponding basis kets. Using this con-
+vention, it should be clear that the basis kets themselves are written as
+ 0 +9/H11039a1
+0b 
+ 0 -9/H11039a0
+1b.  
+(1.49)
+This demonstrates the important feature that basis kets are unit vectors when written in their own basis.
+This new way of expressing a ket simply as the collection of coefﬁcients that multiply the basis 
+kets is referred to as a representation. Because we have assumed the Sz kets as the basis kets, this is 
+called the Sz representation. It is always true that basis kets have the simple form shown in Eq. (1.49) 
+when written in their own representation. A general ket 0 c9 is written as
+ 0 c9/H11039¢8+ 0 c9
+8- 0 c9≤. (1.50)
+This use of matrix notation simpliﬁes the mathematics of bras and kets. The advantage is not so evident for 
+the simple two-dimensional state space of spin-1/2 systems, but it is very evident for larger dimensional 
+problems. This notation is indispensable when using computers to calculate quantum mechanical results. 
+For example, the SPINS program employs matrix calculations coded in the Java computer language to 
+simulate the Stern-Gerlach experiments using the same probability rules you are learning here.
+We saw earlier [Eq. (1.11)] that the coefﬁcients of a bra are the complex conjugates of the coef-
+ﬁcients of the corresponding ket. We also know that an inner product of a bra and a ket yields a single 
+complex number. In order for the matrix rules of multiplication to be used, a bra must be represented 
+by a row vector, with the entries being the coefﬁcients ordered in the same sense as for the ket. For 
+example, if we use the general ket
+ 
+0 c9= a 0 +9+ b 0 -9, (1.51)
+which is represented as
+ 0 c9/H11039aa
+bb, (1.52)
+then the corresponding bra
+ 8c 0 = a*8 + 0 + b*8 - 0 (1.53)
+is represented by a row vector as
+ 8c 0 /H110391a* b*2. (1.54)
+The rules of matrix algebra can then be applied to ﬁnd an inner product. For example,
+  8c 0 c9= 1a* b*2aa
+bb 
+  = 0a 0
+2
++ 0b 0
+2
+.  
+(1.55)
+So a bra is represented by a row vector that is the complex conjugate and transpose of the column vec-
+tor representing the corresponding ket.
+
+24 Stern-Gerlach Experiments
+Example 1.3 To get some practice using this new matrix notation, and to learn some more about 
+the spin-1/2 system, use the results of Experiment 2 to determine the Sy basis kets using the matrix 
+approach instead of the Dirac bra-ket approach.
+Consider Experiment 2 in the case where the second Stern-Gerlach analyzer is aligned along 
+the y-axis. We said before that the results are the same as in the case shown in Fig. 1.4. Thus, we 
+have
+  P1, + y = @y8+ @ +9@
+2
+= 1
+2  
+  P1, - y = @y8- @ +9@
+2
+= 1
+2  
+  P2, + y = @y8+ @ -9@
+2
+= 1
+2  
+(1.56)
+  P2, - y = @y8- @ -9@
+2
+= 1
+2 , 
+as depicted in the histograms of Fig. 1.14.
+These results allow us to determine the kets 0{9y corresponding to the spin component up and 
+down along the y-axis. The argument and calculation proceeds exactly as it did earlier for the 0{9x 
+states up until the point [Eq. (1.35)] where we arbitrarily chose the phase a to be zero. Having done 
+that for the 0{9x states, we are no longer free to make that same choice for the 0{9y states. Thus 
+we use Eq. (1.35) to write the 0{9y states as
+  0 +9y = 1
+22
+ 30 +9+ eia0 -94/H110391
+22
+ a1
+eiab  
+  0 -9y = 1
+22
+ 30 +9- eia0 -94/H110391
+22
+ a 1
+-eiab. 
+(1.57)
+To determine the phase a, we use some more information at our disposal. Experiment 2 could be 
+performed with the ﬁrst Stern-Gerlach analyzer aligned along the x-axis and the second analyzer 
+along the y-axis. Again the results would be identical (50% at each output port), yielding
+ P+ y = @y8+ @ +9x @
+2
+= 1
+2 (1.58)
+(a)
+P/PlusyP/Minusy
+1
+P
+Sy
+/Minus/HBar
+2
+/HBar
+2
+(b)
+P/PlusyP/Minusy
+1
+P
+Sy
+/Minus/HBar
+2
+/HBar
+2
+/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/LBracketBar1/Minus/RAngleBracket1/LBracketBar1Ψin/RAngleBracket1/Space/Equal/Space/LBracketBar1/Plus/RAngleBracket1
+FIGURE 1.14 Histograms of Sy spin component measurements for input states (a) 0cin9 = 0 +9 
+and (b) 0cin9 = 0 -9.
+
+1.4 General Quantum Systems 25
+as one of the measured quantities. Now use matrix algebra to calculate this:
+   y8 + 0 + 9x = 1
+12 11 e-ia21
+12 a1
+1b  
+  = 1
+2 11 + e-ia2  
+  @y8 + 0 +9x @
+2
+= 1
+2 11 + e-ia21
+2 11 + eia2 (1.59)
+  = 1
+4 11 + eia + e-ia + 12  
+  = 1
+2 11 + cos a2= 1
+2 . 
+This result requires that cos a = 0, or that a = {p>2. The two choices for the phase correspond 
+to the two possibilities for the direction of the y-axis relative to the already determined x- and z-axes. 
+The choice a = +p>2 can be shown to correspond to a right-handed coordinate system, which is the 
+standard convention, so we choose that phase. We thus represent the 0{9y kets as
+  0 +9y /H110391
+22
+ a1
+i b  
+  0 -9y /H110391
+22
+ a1
+-ib. 
+(1.60)
+Note that the imaginary components of these kets are required. They are not merely a mathemati-
+cal convenience as one sees in classical mechanics. In general, quantum mechanical state vectors 
+have complex coefﬁcients. But this does not mean that the results of physical measurements are 
+complex. On the contrary, we always calculate a measurement probability using a complex square, 
+so all quantum mechanics predictions of probabilities are real.
+ 1.4 /H17039 GENERAL QUANTUM SYSTEMS
+The machinery we have developed for spin-1/2 systems can be generalized to other quantum systems. 
+For example, if an observable A yields quantized measurement results an for some ﬁnite range of n, 
+then we generalize the schematic depiction of a Stern-Gerlach measurement to a measurement of the 
+A
+/LBracketBar1a1/RAngleBracket1
+/LBracketBar1a2/RAngleBracket1
+/LBracketBar1a3/RAngleBracket1
+/LBracketBar1Ψin/RAngleBracket1
+a2
+a1
+a3
+FIGURE 1.15 Generic depiction of the quantum mechanical measurement of observable A.
+
+26 Stern-Gerlach Experiments
+observable A, as shown in Fig. 1.15. The observable A labels the measurement device and the possible 
+results a1, a2, a3, etc. label the output ports. The basis kets corresponding to the results an are then 0an9. 
+The mathematical rules about kets in this general case are
+  8ai @aj9= dij         orthonormality 
+  0 c9= a
+i
+8ai 0 c90ai9  completeness,  
+(1.61)
+where we use the Kronecker delta
+ dij = e0
+1 i /H11014j
+i = j (1.62)
+to express the orthonormality condition compactly. In this case, the generalization of postulate 4 says 
+that the probability of a measurement of one of the possible results an is
+ Pan = 08an 0cin90
+2
+.  (1.63)
+Example 1.4 Imagine a quantum system with an observable A that has three possible measure-
+ment results: a1, a2, and a3. The three kets 0a19, 0a29, and 0a39 corresponding to these possible 
+results form a complete orthonormal basis. The system is prepared in the state
+ 0 c9= 2 0a19- 3 0a29+ 4i 0a39. (1.64)
+Calculate the probabilities of all possible measurement results of the observable A.
+The state vector in Eq. (1.64) is not normalized, so we must normalize it before calculating 
+probabilities. Introducing a complex normalization constant C, we ﬁnd
+  1 = 8c 0 c9  
+  = C*128a1 0 - 38a2 0 - 4i8a3 02C12 0a19- 3 0a29+ 4i 0a392 
+  = 0C 0
+2
+548a1 0a19- 68a1 0a29+ 8i8a1 0a39  
+ - 68a2 0a19+ 98a2 0a29- 12i8a2 0a39  (1.65)
+  - 8i8a3 0a19+ 12i8a3 0a29+ 168a3 0a396  
+  = 0C 0
+2
+54 + 9 + 166= 0C 0
+2 29  
+  1 C = 1
+129 . 
+The normalized state is
+ 0 c9= 1
+129 12 0a19 - 3 0a29+ 4i 0a392. (1.66)
+

@@ -74,6 +74,41 @@ export class UniverseSimulator {
         this.bodies.push({ x: 40, y: 0, z: 0, vx: 0, vy: Math.sqrt(30000 / 40), vz: 0, mass: 50, radius: 3.5, color: '#F0932B', trail: [] });
     }
 
+    blackHole() {
+        this.bodies = [];
+        // Supermassive Black Hole
+        this.bodies.push({
+            x: 0, y: 0, z: 0,
+            vx: 0, vy: 0, vz: 0,
+            mass: 500000,
+            radius: 8,
+            color: '#000000',
+            trail: []
+        });
+
+        // Accretion Disk debris
+        for (let i = 0; i < 300; i++) {
+            const dist = 15 + Math.random() * 60;
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.sqrt(500000 / dist);
+            // Add some randomness to velocity/plane
+            const variation = 0.8 + Math.random() * 0.4;
+
+            this.bodies.push({
+                x: Math.cos(angle) * dist,
+                y: Math.sin(angle) * dist,
+                z: (Math.random() - 0.5) * 2,
+                vx: -Math.sin(angle) * velocity * variation,
+                vy: Math.cos(angle) * velocity * variation,
+                vz: (Math.random() - 0.5) * 0.5,
+                mass: 0.1 + Math.random(),
+                radius: 0.5 + Math.random() * 0.5,
+                color: `hsl(${Math.random() * 60 + 10}, 80%, ${40 + Math.random() * 40}%)`, // Fire colors
+                trail: []
+            });
+        }
+    }
+
     step() {
         const n = this.bodies.length;
         // Compute forces

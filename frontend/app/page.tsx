@@ -11,6 +11,8 @@ import UniverseView from '@/components/views/UniverseView';
 import AutomataView from '@/components/views/AutomataView';
 import PhysicsView from '@/components/views/PhysicsView';
 
+import QuantumCourseView from '@/components/views/QuantumCourseView';
+
 export default function Home() {
   const [activeSim, setActiveSim] = useState<any>('sorting');
 
@@ -25,6 +27,7 @@ export default function Home() {
       case 'automata': return <AutomataView />;
       case 'physics': return <PhysicsView />;
       case 'universe': return <UniverseView />;
+      case 'quantum_course': return <QuantumCourseView />;
       default: return <div>Select a simulation</div>;
     }
   };

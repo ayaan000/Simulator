@@ -69,8 +69,8 @@ export class FlowSimulator {
         let maxFlow = 0;
 
         while (true) {
-            // BFS to find augmenting path
-            const parent = new Map<number, FlowEdge>();
+            // BFS to find augmenting path in RESIDUAL graph
+            const parent = new Map<number, { edge: FlowEdge, dir: 'forward' | 'backward' }>();
             const queue = [source];
             const visited = new Set<number>([source]);
 
@@ -82,43 +82,75 @@ export class FlowSimulator {
                     break;
                 }
 
-                // Outgoing edges
                 for (const edge of this.edges) {
+                    // Forward edge: remaining capacity > 0
                     if (edge.source === u && !visited.has(edge.target) && edge.capacity > edge.flow) {
                         visited.add(edge.target);
-                        parent.set(edge.target, edge);
+                        parent.set(edge.target, { edge, dir: 'forward' });
                         queue.push(edge.target);
                     }
+                    // Backward edge: flow > 0 (can push back)
+                    if (edge.target === u && !visited.has(edge.source) && edge.flow > 0) {
+                        visited.add(edge.source);
+                        parent.set(edge.source, { edge, dir: 'backward' });
+                        queue.push(edge.source);
+                    }
                 }
-                // Incoming edges (residual) - simplified for now, assuming directed graph only forward
             }
 
-            if (!pathFound) break;
+            // Yield residual graph state for visualization
+            // We can compute residual edges here
+            const residualEdges = [];
+            for (const edge of this.edges) {
+                if (edge.capacity > edge.flow) {
+                    residualEdges.push({ source: edge.source, target: edge.target, cap: edge.capacity - edge.flow, isBack: false });
+                }
+                if (edge.flow > 0) {
+                    residualEdges.push({ source: edge.target, target: edge.source, cap: edge.flow, isBack: true });
+                }
+            }
+
+            if (!pathFound) {
+                yield { maxFlow, pathEdges: [], residualEdges, done: false }; // Show final state before finishing
+                break;
+            }
 
             // Find bottleneck
             let pathFlow = Infinity;
             let v = sink;
             const pathEdges: string[] = [];
+
             while (v !== source) {
-                const edge = parent.get(v)!;
-                pathFlow = Math.min(pathFlow, edge.capacity - edge.flow);
-                pathEdges.push(edge.id);
-                v = edge.source;
+                const p = parent.get(v)!;
+                if (p.dir === 'forward') {
+                    pathFlow = Math.min(pathFlow, p.edge.capacity - p.edge.flow);
+                } else {
+                    pathFlow = Math.min(pathFlow, p.edge.flow);
+                }
+                pathEdges.push(p.edge.id);
+                // Backtrack
+                v = p.dir === 'forward' ? p.edge.source : p.edge.target;
             }
 
             // Update flow
             v = sink;
             while (v !== source) {
-                const edge = parent.get(v)!;
-                edge.flow += pathFlow;
-                v = edge.source;
+                const p = parent.get(v)!;
+                if (p.dir === 'forward') {
+                    p.edge.flow += pathFlow;
+                    v = p.edge.source;
+                } else {
+                    p.edge.flow -= pathFlow; // Reduce flow on forward edge == push flow on backward edge
+                    v = p.edge.target;
+                }
             }
 
             maxFlow += pathFlow;
             this.log.push(`Augmented flow by ${pathFlow}. Total: ${maxFlow}`);
-            yield { maxFlow, pathEdges };
+            yield { maxFlow, pathEdges, residualEdges, done: false };
         }
         this.log.push(`Max Flow calculation complete. Max Flow: ${maxFlow}`);
+        return { done: true, maxFlow };
     }
 
     step() {
